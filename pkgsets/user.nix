@@ -7,6 +7,6 @@
     _1password-gui # password manager application
     _1password-cli # password manager cli
     slack # chat app
-    zettlr # markdown previewer/editor for note taking
+    marktext # markdown previewer/editor for note taking
   ];
 }
