@@ -124,7 +124,8 @@ $ nix-shell -p sops neovim --run "EDITOR=nvim sops ./secrets/sops/secrets.yaml"
 
 TODO
 ---
-
+- set date to 12hr
+- position clock in upper right
 - configure shell
 - conifgure editor
 - unify clipboards
