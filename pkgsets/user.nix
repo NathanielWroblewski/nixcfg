@@ -2,11 +2,12 @@
   packages = with pkgs; [
     brave # browser
     vlc # media player
-    keybase # encrypted chat cli
-    keybase-gui # encrypted chat app
     _1password-gui # password manager application
     _1password-cli # password manager cli
-    slack # chat app
+    keybase # encrypted messaging app's cli
+    keybase-gui # encrypted messaging app
+    telegram-desktop # encrypted messaging app
+    slack # messaging app
     marktext # markdown previewer/editor for note taking
   ];
 }
