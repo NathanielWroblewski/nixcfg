@@ -1,7 +1,7 @@
 Nix Configuration
 ===
 
-This repository contains personal configuration for NixOS and Nix package manager.
+This repository contains my personal configuration for NixOS and the Nix package manager.
 
 
 
@@ -18,7 +18,13 @@ Then, from the root of this repository, rebuild nixos with:
 $ sudo nixos-rebuild switch --flake ./ --show-trace
 ```
 
-Keep in mind, only filetypes specified in the .gitignore are commited.
+Keep in mind, only filetypes specified by the `.gitignore` are commited.
+
+Commit the changes, and publish them:
+```sh
+$ git commit -m 'Short description of change'
+$ git push origin main
+```
 
 
 Import tree
@@ -30,18 +36,18 @@ flake.nix
 │ └ deps
 │   ├ imports
 │   └ overlay     
-└ hosts/slab/default
+└ hosts/$host/default
   ├ hosts/shared/*
-  ├ hosts/slab/configuration
-  │ ├ hosts/slab/hardware-configuration
+  ├ hosts/$host/configuration
+  │ ├ hosts/$host/hardware-configuration
   │ ├ syscfg/shared/*
-  │ ├ syscfg/slab/*
+  │ ├ syscfg/$host/*
   │ ├ pkgsets/global
   │ └ pkgcfg/system-level/*
-  └ hosts/slab/users/default
-      └ hosts/slab/users/nathaniel
-        └ home/nathaniel/slab.nix
-          └ home/nathaniel/home.nix
+  └ hosts/$host/users/default
+      └ hosts/slab/users/$user
+        └ home/$user/$host.nix
+          └ home/$user/home.nix
             ├ pkgsets/user
             ├ pkgsets/dev
             └ pkgcfg/user-level/*
@@ -52,27 +58,27 @@ Directory Structure
 
 ```
 .
-├── constants        # expressions containing key-value pairs of constants
-├── deps             # flake dependencies
-│   ├── imports      # packages imported by this flake, may be nixpkgs or self-hosted
-│   └── overlays     # imported package overrides
-├── dotfiles         # dotfiles, e.g. .zshrc
-├── flake.nix        # top-level nixos configuration entrypoint
-├── home             # home-manager configuration
-│   └── nathaniel
-│       ├── home.nix # user's shared home-manager configuration
-│       └── slab.nix # user's device-specific home-manager config
+├── constants         # expressions containing key-value pairs of constants
+├── deps              # flake dependencies
+│   ├── imports       # packages imported by this flake, may be nixpkgs or self-hosted
+│   └── overlays      # imported package overrides
+├── dotfiles          # dotfiles, e.g. .zshrc
+├── flake.nix         # top-level nixos configuration entrypoint
+├── home              # home-manager configuration
+│   └── $user
+│       ├── home.nix  # user's shared home-manager configuration
+│       └── $host.nix # user's device-specific home-manager config
 ├── hosts
-│   ├── shared       # system-level configuration shared across all hosts
-│   └── slab         # system-level, device-specific configuration
-│       └── users    # device-specific users
-├── pkgcfg           # package configurations
-│   ├── system-level # system-level package configurations
-│   └── user-level   # user-level package configurations (home-manager)
-└── pkgsets          # preset package lists for users/roles
-    ├── dev.nix      # developer packages
-    ├── global.nix   # global packages (includes root)
-    └── user.nix     # user packages
+│   ├── shared        # system-level configuration shared across all hosts
+│   └── $host         # system-level, device-specific configuration
+│       └── users     # device-specific users
+├── pkgcfg            # package configurations
+│   ├── system-level  # system-level package configurations
+│   └── user-level    # user-level package configurations (home-manager)
+└── pkgsets           # preset package lists for users/roles
+    ├── dev.nix       # developer packages
+    ├── global.nix    # global packages (includes root)
+    └── user.nix      # user packages
 ```
 
 The canonical `configuration.nix` and `hardware-configuration.nix` provisioned by a vanilla NixOS install

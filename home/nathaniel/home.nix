@@ -56,5 +56,6 @@ in
 
   home.sessionVariables = {
     TERMINAL = "alacritty";
+    EDITOR = "hx";
   };
 }
