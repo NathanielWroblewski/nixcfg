@@ -19,5 +19,8 @@
     # curl is pre-installed.
     # gawk is pre-installed.
     # sed is pre-installed.
+
+    # fonts
+    jetbrains-mono # mono font with ligature support
   ];
 }

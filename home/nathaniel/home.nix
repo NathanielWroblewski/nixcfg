@@ -35,9 +35,10 @@ in
     ../../hosts/shared/nixpkgs.nix
 
     # Import user-level package configurations
-    ../../pkgcfg/user-level/keybase.nix
+    ../../pkgcfg/user-level/alacritty.nix
     ../../pkgcfg/user-level/git.nix
     ../../pkgcfg/user-level/helix/default.nix
+    ../../pkgcfg/user-level/keybase.nix
     ../../pkgcfg/user-level/yazi.nix
     ../../pkgcfg/user-level/zsh.nix
   ];
@@ -58,4 +59,21 @@ in
     TERMINAL = "alacritty";
     EDITOR = "hx";
   };
+
+  # # GNOME-only rebinding of activities view (cmd) to cmd+space
+  # dconf.settings = {
+  #   "org/gnome/mutter" = {
+  #     overlay-key = ""; # Disable Super as overlay trigger
+  #   };
+
+  #   "org/gnome/settings-daemon/plugins/media-keys" = {
+  #     custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+  #   };
+
+  #   "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+  #     name = "Toggle Activities";
+  #     command = "gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval \"Main.overview.toggle()\"";
+  #     binding = "<Super>space";
+  #   };
+  # };
 }

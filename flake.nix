@@ -16,6 +16,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # a secondary version is specified to allow for specifying the latest stable release
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+
+    # xremap flake to allow for rebindings like cmd -> ctrl
+    xremap-flake = {
+      url = "github:xremap/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # outputs receives all inputs as well as self (this flake) and defines what this flake exposes
@@ -59,6 +65,7 @@
           # modules placed here can be accessed via the config argument on downstream expressions/nix-files
           # modules are typically a list of .nix files that define the actual system configuration
           modules = [
+            # inputs.xremap-flake.nixosModules.default
             ./hosts/slab
           ];
         };

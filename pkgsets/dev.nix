@@ -4,6 +4,6 @@
     ripgrep
     starship # cli prompt
     yazi # terminal file manager
-    jetbrains-mono # mono font with ligature support
+    lutgen # apply color themes to images
   ];
 }
