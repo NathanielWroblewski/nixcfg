@@ -321,7 +321,6 @@ window-rule {
     default-column-width {
         proportion 0.33333
     }
-    opacity 0.8
 }
 
 window-rule {
