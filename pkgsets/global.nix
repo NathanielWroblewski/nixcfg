@@ -3,6 +3,8 @@
   # List packages installed in system profile. To search, run:
   # `$ nix search wget`
   packages = with pkgs; [
+    niri # wayland compositor, tiling window manager
+
     zsh # shell
     tmux # terminal multiplexer/window management
 

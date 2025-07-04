@@ -40,8 +40,9 @@ in
       ../../syscfg/slab/desktop.nix
 
       # Device-level package configuration
-      ../../pkgcfg/system-level/1pass.nix
-      ../../pkgcfg/system-level/zsh.nix
+      ../../pkgcfg/system-level/1pass.nix # password manager
+      ../../pkgcfg/system-level/niri.nix # wayland compositor, tiling window manager
+      ../../pkgcfg/system-level/zsh.nix # shell
       # ../../pkgcfg/system-level/docker.nix
       # ../../pkgcfg/system-level/hyprland.nix
       # ../../pkgcfg/system-level/polkit.nix
