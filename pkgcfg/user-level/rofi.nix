@@ -9,7 +9,7 @@ in
     font = fonts.mono;
 
     # terminal = path to alacritty
-    # theme = ...
+    theme = "solarized";
     # configPath
     # modes = [];
     # extraConfig = keybindings...

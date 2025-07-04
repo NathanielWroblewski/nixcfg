@@ -42,6 +42,7 @@ in
       # Device-level package configuration
       ../../pkgcfg/system-level/1pass.nix # password manager
       ../../pkgcfg/system-level/niri.nix # wayland compositor, tiling window manager
+      ../../pkgcfg/system-level/tuigreet.nix # display manager and login
       ../../pkgcfg/system-level/zsh.nix # shell
       # ../../pkgcfg/system-level/docker.nix
       # ../../pkgcfg/system-level/hyprland.nix
