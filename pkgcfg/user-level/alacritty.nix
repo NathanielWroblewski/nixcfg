@@ -16,7 +16,7 @@ in
 
       window.decorations = "none";
 
-      window.opacity = 0.8;
+      window.opacity = 0.80;
 
       scrolling.history = 10000;
 
