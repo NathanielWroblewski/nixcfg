@@ -4,6 +4,7 @@
   # `$ nix search wget`
   packages = with pkgs; [
     niri # wayland compositor, tiling window manager
+    rofi # application launcher and window switcher
 
     zsh # shell
     tmux # terminal multiplexer/window management
