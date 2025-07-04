@@ -42,6 +42,7 @@ in
     ../../pkgcfg/user-level/niri.nix
     ../../pkgcfg/user-level/rofi.nix
     ../../pkgcfg/user-level/swaybg.nix
+    ../../pkgcfg/user-level/waybar.nix
     ../../pkgcfg/user-level/yazi.nix
     ../../pkgcfg/user-level/zsh.nix
   ];

@@ -7,10 +7,10 @@
       {
         layer = "top";
         height = 23;
-        margin = 0;
+        margin = "0";
         spacing = 10;
         border-size = 2;
-        padding = 10;
+        padding = "10";
         position = "top";
 
         modules-left = [
