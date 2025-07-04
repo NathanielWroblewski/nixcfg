@@ -13,8 +13,12 @@
     autosuggestions.enable = true;
     enableLsColors = true;
 
-    # TODO: Add guard clause for starship being installed
-    promptInit = "eval ${pkgs.starship}/bin/starship init zsh";
+    promptInit =
+      if (pkgs.starship or null) != null
+      then ''
+        eval "$(${pkgs.starship}/bin/starship init zsh)"
+      ''
+      else null;
 
     # shellAliases = {
     #   ll = "ls -l";
