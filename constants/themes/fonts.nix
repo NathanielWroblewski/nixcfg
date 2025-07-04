@@ -1,3 +1,3 @@
 {
-  mono = "JetBrains Mono";
+  mono = "Liberation Mono";
 }

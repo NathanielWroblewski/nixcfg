@@ -39,6 +39,7 @@ in
     ../../pkgcfg/user-level/git.nix
     ../../pkgcfg/user-level/helix/default.nix
     ../../pkgcfg/user-level/keybase.nix
+    ../../pkgcfg/user-level/niri.nix
     ../../pkgcfg/user-level/rofi.nix
     ../../pkgcfg/user-level/yazi.nix
     ../../pkgcfg/user-level/zsh.nix

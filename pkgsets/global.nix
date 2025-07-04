@@ -6,6 +6,9 @@
     niri # wayland compositor, tiling window manager
     greetd.tuigreet # display manager and login
     rofi # application launcher and window switcher
+    brightnessctl # screen brightness control?
+    xwayland-satellite # ???
+    nautilus # file explorer
 
     zsh # shell
     tmux # terminal multiplexer/window management
