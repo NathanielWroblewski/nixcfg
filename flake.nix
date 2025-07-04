@@ -59,6 +59,9 @@
               global_filepaths = ./constants/global-filepaths.nix;
               user_filepaths = import ./constants/user-filepaths.nix;
               users = import ./constants/users.nix;
+              themes = {
+                fonts = import ./constants/themes/fonts.nix;
+              };
             };
           };
 

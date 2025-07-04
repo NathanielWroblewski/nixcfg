@@ -1,8 +1,12 @@
+{ constants, ... }:
+let
+  fonts = constants.themes.fonts;
+in
 {
   fonts = {
     fontconfig = {
       defaultFonts = {
-        monospace = [ "JetBrains Mono" ];
+        monospace = [ fonts.mono ];
       };
     };
   };

@@ -30,6 +30,9 @@ in
       ../../syscfg/shared/firewall.nix
       ../../syscfg/shared/ssh.nix
 
+      # Theme
+      ../../syscfg/shared/fonts.nix
+
       # Device-specific NixOS configuration
       ../../syscfg/slab/nixos.nix
 

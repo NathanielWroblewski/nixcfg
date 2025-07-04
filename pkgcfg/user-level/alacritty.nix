@@ -1,3 +1,7 @@
+{ constants, ... }:
+let
+  fonts = constants.themes.fonts;
+in
 {
   programs.alacritty = {
     enable = true;
@@ -20,22 +24,22 @@
         size = 12;
 
         normal = {
-          family = "JetBrains Mono";
+          family = fonts.mono;
           style = "Regular";
         };
 
         bold = {
-          family = "JetBrains Mono";
+          family = fonts.mono;
           style = "Bold";
         };
 
         italic = {
-          family = "JetBrains Mono";
+          family = fonts.mono;
           style = "Italic";
         };
 
         bold_italic = {
-          family = "JetBrains Mono";
+          family = fonts.mono;
           style = "Bold Italic";
         };
       };
@@ -52,4 +56,12 @@
 
     theme = "tokyo_night";
   };
+
+  # home.file.".config/alacritty/alacritty.yml".text = ''
+  #   font:
+  #     features:
+  #       - "+liga"
+  #       - "+calt"
+  #       - "+clig"
+  # '';
 }
