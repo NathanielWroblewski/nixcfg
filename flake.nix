@@ -22,6 +22,9 @@
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # apple fonts
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
   };
 
   # outputs receives all inputs as well as self (this flake) and defines what this flake exposes
