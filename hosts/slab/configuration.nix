@@ -6,7 +6,8 @@
 # created by a vanilla NixOS installation.
 { pkgs, ... }:
 let
-  globalPackageList = import ../../pkgsets/global.nix { pkgs = pkgs; };
+  desktopPkgs = import ../../pkgsets/desktop.nix { pkgs = pkgs; };
+  globalPkgs = import ../../pkgsets/global.nix { pkgs = pkgs; };
 in
 {
   imports =
@@ -59,7 +60,8 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
-    globalPackageList.packages ++ [
+    desktopPkgs.wayland.niri.packages ++
+    globalPkgs.packages ++ [
       xclip # clipboard
       wl-clipboard # wayland clipboard, allows copying from terminal ctrl+shift+c 
       usbutils # for troubleshooting the Dock peripheral

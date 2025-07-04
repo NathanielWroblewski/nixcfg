@@ -3,16 +3,7 @@
   # List packages installed in system profile. To search, run:
   # `$ nix search wget`
   packages = with pkgs; [
-    niri # wayland compositor, tiling window manager
-    greetd.tuigreet # display manager and login
-    rofi # application launcher and window switcher
-    brightnessctl # screen brightness control?
-    xwayland-satellite # ???
-    nautilus # file explorer
-
-    zsh # shell
     tmux # terminal multiplexer/window management
-
     git # version control
 
     neovim # text editor
