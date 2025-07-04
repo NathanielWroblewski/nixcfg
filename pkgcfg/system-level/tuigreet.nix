@@ -8,7 +8,7 @@ in
 
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd niri";
         user = users.nathaniel;
       };
     };
