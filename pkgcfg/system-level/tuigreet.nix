@@ -1,15 +1,12 @@
-{ pkgs, constants, ... }:
-let
-  users = constants.users;
-in
+{ pkgs, ... }:
 {
   services.greetd = {
-    enable = false;
+    enable = true;
 
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd niri";
-        user = users.nathaniel;
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd niri-session";
+        user = "greeter";
       };
     };
   };
