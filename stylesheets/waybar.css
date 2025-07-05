@@ -5,9 +5,13 @@
     background: transparent;
 }
 
+window#waybar {
+    all: unset;
+}
+
 #waybar {
     background-color: rgba(28, 28, 30, 0.50);
-    border-bottom: 1px solid #000000;
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
     padding: 4px 10px;
     margin: 5px;
 }
@@ -65,6 +69,7 @@
     color: white;
 }
 
+#image.nixos,
 #image.ethernetart {
     color: white;
 }

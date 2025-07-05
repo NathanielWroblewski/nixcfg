@@ -7,6 +7,7 @@
 { pkgs, ... }:
 let
   waylandPkgset = import ../../pkgsets/wayland.nix { pkgs = pkgs; };
+  themePkgset = import ../../pkgsets/themes.nix { pkgs = pkgs; };
   globalPkgset = import ../../pkgsets/global.nix { pkgs = pkgs; };
 in
 {
@@ -61,6 +62,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs;
     waylandPkgset.packages ++
+    themePkgset.packages ++
     globalPkgset.packages ++ [
       xclip # clipboard
       wl-clipboard # wayland clipboard, allows copying from terminal ctrl+shift+c 

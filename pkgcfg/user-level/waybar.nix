@@ -1,29 +1,36 @@
 { pkgs, ... }:
 {
+  # File | Help
+  # notifications | microphone | speakers | bluetooth | ethernet/wifi | battery | date | clock
   programs.waybar = {
     enable = true;
     systemd.enable = true;
 
     style =
-      # (builtins.readFile "${pkgs.waybar}/etc/xdg/waybar/style.css") +
+      (builtins.readFile "${pkgs.waybar}/etc/xdg/waybar/style.css") +
       (builtins.readFile ../../stylesheets/waybar.css);
 
     settings = [
       {
         layer = "top";
+        position = "top";
         height = 23;
-        margin = "0";
         spacing = 10;
         border-size = 2;
-        padding = "10";
-        position = "top";
+        padding = 10;
+
+        icon-theme = "WhiteSur";
 
         modules-left = [
-          "custom/files"
+          "image/nixos"
+          "custom/textone"
+          "custom/texttwo"
         ];
         modules-center = [ ];
         modules-right = [
+          "image#ethernetart"
           "battery"
+          "custom/date"
           "clock"
         ];
 
@@ -40,13 +47,25 @@
         };
 
         clock = {
-          format-alt = "{:%Y-%m-%d}";
-          tooltip-format = "{:%Y-%m-%d | %H:%M}";
+          format = "{:%I:%M %p}";
+        };
+
+        "custom/date" = {
+          exec = "date '+%a %d %b'";
+          interval = 60;
+          tooltip = false;
         };
 
         network = {
           interval = 1;
           format-disconnected = "";
+        };
+
+        "image/nixos" = {
+          path = "/home/nathaniel/Pictures/icons/nix-snowflake-white.png";
+          interval = 60;
+          size = 13;
+          on-click = "nautilus";
         };
 
         "custom/textone" = {
@@ -61,6 +80,12 @@
           interval = 60;
           return-type = "plain";
           on-click = "niri msg action show-hotkey-overlay";
+        };
+
+        "image#ethernetart" = {
+          path = "/home/nathaniel/Pictures/icons/wifi-white.png";
+          size = 13;
+          interval = 60;
         };
       }
     ];
