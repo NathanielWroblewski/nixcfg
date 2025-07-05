@@ -49,14 +49,14 @@
           format-disconnected = "";
         };
 
-        "custom/files" = {
+        "custom/textone" = {
           exec = "echo 'File'";
           interval = 60;
           return-type = "plain";
           on-click = "nautilus";
         };
 
-        "custom/help" = {
+        "custom/texttwo" = {
           exec = "echo 'Help'";
           interval = 60;
           return-type = "plain";

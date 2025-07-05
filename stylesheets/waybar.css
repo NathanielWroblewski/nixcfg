@@ -58,10 +58,8 @@
     font-weight: 600;
 }
 
-#custom-texttwo,
-#custom-textthree,
-#custom-textfour,
-#custom-textfive {
+#custom-textone,
+#custom-texttwo {
     font-size: 13px;
     padding-left: 20px;
     color: white;
