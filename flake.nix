@@ -22,12 +22,6 @@
     # a secondary version is specified to allow for specifying the latest stable release
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    # xremap flake to allow for rebindings like cmd -> ctrl
-    xremap-flake = {
-      url = "github:xremap/nix-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # apple fonts, requires stylix
     apple-fonts = {
       url = "github:Lyndeno/apple-fonts.nix";

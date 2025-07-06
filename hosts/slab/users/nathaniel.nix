@@ -3,9 +3,6 @@ let
   users = constants.users;
 in
 {
-  # imports = [
-  #   ../../../pkgcfg/user-level/xremap-mac.nix
-  # ];
   users.users.nathaniel = {
     initialHashedPassword = "$y$j9T$ddxjoTt2s2kSuZIP0xTXG1$ohF57.TzjtXNpZ9SPaNGSvoM1pZ99ivx5XY48Rul8jB";
     isNormalUser = true;
