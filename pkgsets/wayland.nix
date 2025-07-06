@@ -10,5 +10,6 @@
     swaylock-effects # wayland screen locking utility
     rofi # application launcher and window switcher
     nautilus # file explorer
+    swww # animated wallpapers
   ];
 }
