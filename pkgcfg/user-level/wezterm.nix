@@ -14,6 +14,7 @@ in
       return {
         color_scheme = '${theme.name.titleized}', 
         font = wezterm.font('${fonts.mono}'),
+        window_background_opacity = 0.85,
 
         hide_tab_bar_if_only_one_tab = true
       }
