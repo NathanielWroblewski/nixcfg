@@ -122,6 +122,43 @@ Then create the sops file from the root of your `nixcfg` folder:
 $ nix-shell -p sops neovim --run "EDITOR=nvim sops ./secrets/sops/secrets.yaml"
 ```
 
+Theming
+---
+
+You can use the `lutgen` cli utility to apply a themed palette to an image.
+
+Browse all themes with:
+```sh
+$ lutgen palette all
+```
+
+Browse for specific names:
+```sh
+$ lutgen palette names | grep tokyo
+```
+
+Check a single palette:
+```sh
+$ lutgen palette tokyo-night-dark
+```
+
+Theme an image:
+```sh
+$ lutgen apply -p tokyo-night-dark -o ./output-image.jpg ./input-image.jpg
+```
+
+If using a background video, you can use lutgen to generate the look-up table:
+```sh
+$ lutgen preset tokyo-night-dark --output tokyo-night-dark.cube
+```
+
+Then pass the look-up table into `ffmpeg`:
+```sh
+$ ffmpeg -i ./input.mp4 -vf lut3d=tokyo-night-dark.cube -c:a copy ./output.mp4
+```
+
+
+
 TODO
 ---
 - theme rofi
