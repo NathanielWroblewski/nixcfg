@@ -2,6 +2,12 @@ rec {
   active = tokyo_night;
 
   tokyo_night = {
+    name = {
+      titleized = "Tokyo Night";
+      snake = "tokyo_night";
+      oneword = "tokyonight";
+    };
+
     bright = {
       black = "#444b6a";
       blue = "#7da6ff";

@@ -45,6 +45,7 @@ in
     ../../pkgcfg/user-level/swaybg.nix
     ../../pkgcfg/user-level/swayidle.nix
     ../../pkgcfg/user-level/waybar.nix
+    ../../pkgcfg/user-level/wezterm.nix
     ../../pkgcfg/user-level/yazi.nix
     ../../pkgcfg/user-level/zsh.nix
   ];
