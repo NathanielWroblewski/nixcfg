@@ -72,6 +72,7 @@
               users = import ./constants/users.nix;
               themes = {
                 fonts = import ./constants/themes/fonts.nix;
+                colors = import ./constants/themes/colors.nix;
               };
             };
           };
