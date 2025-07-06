@@ -1,6 +1,8 @@
 { pkgs, lib, constants, ... }:
 let
-  timeout = 30; # 10 minutes
+  escape = str: lib.replaceStrings [ "%" ] [ "%%" ] str;
+  lock_timeout = 30; # 10 minutes
+  sleep_timeout = lock_timeout + 30; # when monitor powers off
   swaylock = import ./swaylock-effects.nix {
     pkgs = pkgs;
     lib = lib;
@@ -21,9 +23,9 @@ in
       # After 10 minutes of inactivity, power off monitors and lock screen
       ExecStart = ''
         ${pkgs.swayidle}/bin/swayidle -w \
-          timeout ${toString (timeout + 1)} 'niri msg action power-off-monitors' \
-          timeout ${toString timeout} '${swaylock.cmd}' \
-          before-sleep '${swaylock.cmd}'
+          timeout ${toString sleep_timeout} 'niri msg action power-off-monitors' \
+          timeout ${toString lock_timeout} '${escape swaylock.cmd}' \
+          before-sleep '${escape swaylock.cmd}'
       '';
       Restart = "on-failure";
       RestartSec = "1s";
