@@ -124,10 +124,9 @@ $ nix-shell -p sops neovim --run "EDITOR=nvim sops ./secrets/sops/secrets.yaml"
 
 TODO
 ---
-- configure starship prompt
+- configure waybar
+- configure swaylock-effects
 - configure tui-greet
-- set date to 12hr
-- position clock in upper right
 - configure shell
 - configure editor
 - unify clipboards
@@ -137,3 +136,4 @@ TODO
   - colors / themes
 - drop desktop environment
 - setup remaining desktop services
+- host font packages

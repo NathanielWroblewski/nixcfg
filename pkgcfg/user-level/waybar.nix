@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  home = builtins.getEnv "HOME";
+in
 {
   # File | Help
   # notifications | microphone | speakers | bluetooth | ethernet/wifi | battery | date | clock
@@ -66,7 +69,6 @@
           path = "/home/nathaniel/Pictures/icons/nix-snowflake-white.png";
           interval = 60;
           size = 13;
-          on-click = "nautilus";
         };
 
         "custom/textone" = {

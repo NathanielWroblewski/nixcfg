@@ -1,12 +1,11 @@
 { pkgs, lib, ... }:
 let
-  home = builtins.getEnv "HOME";
   trim = lib.strings.trim;
 in
 {
   cmd = trim ''
     ${pkgs.swaylock-effects}/bin/swaylock -f \
-      --image ${home}/Pictures/.background-image.jpg \
+      --image /home/nathaniel/Pictures/.background-image.jpg \
       --clock \
       --indicator \
       --indicator-radius 120 \
