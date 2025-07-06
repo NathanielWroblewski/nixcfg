@@ -1,7 +1,7 @@
 { pkgs, lib, constants, ... }:
 let
   escape = str: lib.replaceStrings [ "%" ] [ "%%" ] str;
-  lock_timeout = 30; # 10 minutes
+  lock_timeout = 600; # 10 minutes
   sleep_timeout = lock_timeout + 30; # when monitor powers off
   swaylock = import ./swaylock-effects.nix {
     pkgs = pkgs;
