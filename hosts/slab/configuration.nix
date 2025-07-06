@@ -21,7 +21,6 @@ in
       ../../syscfg/shared/region.nix
 
       # Drivers and devices
-      ../../syscfg/shared/xwayland.nix
       ../../syscfg/shared/drivers.nix
       ../../syscfg/shared/audio.nix
       ../../syscfg/shared/keyboard.nix
