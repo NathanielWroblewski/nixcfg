@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   packages = with pkgs; [
-    alacritty # terminal
     wezterm # terminal emulator
     ripgrep
     starship # cli prompt
