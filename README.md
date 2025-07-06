@@ -124,6 +124,7 @@ $ nix-shell -p sops neovim --run "EDITOR=nvim sops ./secrets/sops/secrets.yaml"
 
 TODO
 ---
+- theme rofi
 - sanity check terminal theme
 - animated backgrounds with swww
 - configure waybar
