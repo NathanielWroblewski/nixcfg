@@ -1,9 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, constants, ... }:
 let
   timeout = 600; # 10 minutes
   swaylock = import ./swaylock-effects.nix {
     pkgs = pkgs;
     lib = lib;
+    constants = constants;
   };
 in
 {

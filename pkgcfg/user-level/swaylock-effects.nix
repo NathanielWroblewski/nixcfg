@@ -1,12 +1,13 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, constants, ... }:
 let
   trim = lib.strings.trim;
+  themeFonts = constants.themes.fonts;
 in
 {
   cmd = trim ''
     ${pkgs.swaylock-effects}/bin/swaylock -f \
       --image /home/nathaniel/Pictures/.background-image.jpg \
-      --font "SFProDisplay Nerd Font" \
+      --font "${themeFonts.sans}" \
       --clock \
       --indicator \
       --indicator-radius 120 \
