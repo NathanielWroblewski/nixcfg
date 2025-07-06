@@ -7,7 +7,7 @@
     settings = {
       theme = "catppuccin_mocha_transparent";
       editor = {
-        clipboard = "wl-copy";
+        clipboard-provider = "wayland";
         line-number = "relative";
         cursorline = true;
         color-modes = true;
