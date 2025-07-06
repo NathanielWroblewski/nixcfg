@@ -35,7 +35,6 @@ window#waybar {
 
 #clock {
     font-weight: 700;
-    font-size: 12px;
 }
 
 #window {
@@ -64,7 +63,6 @@ window#waybar {
 
 #custom-textone,
 #custom-texttwo {
-    font-size: 13px;
     padding-left: 20px;
     color: white;
 }
@@ -76,6 +74,5 @@ window#waybar {
 
 #custom-date {
     color: white;
-    font-size: 13px;
     font-weight: 700;
 }
