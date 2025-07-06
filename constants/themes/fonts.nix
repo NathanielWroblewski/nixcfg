@@ -1,3 +1,3 @@
 {
-  mono = "Liberation Mono";
+  mono = "JetBrainsMono NF";
 }

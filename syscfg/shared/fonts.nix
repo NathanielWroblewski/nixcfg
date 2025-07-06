@@ -1,12 +1,16 @@
-{ constants, ... }:
+{ pkgs, constants, ... }:
 let
-  fonts = constants.themes.fonts;
+  themeFonts = constants.themes.fonts;
 in
 {
   fonts = {
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
+
     fontconfig = {
       defaultFonts = {
-        monospace = [ fonts.mono ];
+        monospace = [ themeFonts.mono ];
       };
     };
   };

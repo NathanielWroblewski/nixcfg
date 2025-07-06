@@ -36,6 +36,7 @@ in
 
     # Import user-level package configurations
     ../../pkgcfg/user-level/alacritty.nix
+    ../../pkgcfg/user-level/fonts.nix
     ../../pkgcfg/user-level/git.nix
     ../../pkgcfg/user-level/helix/default.nix
     ../../pkgcfg/user-level/keybase.nix
