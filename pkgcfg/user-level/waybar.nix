@@ -39,6 +39,7 @@
           format-alt = "{time} {icon}";
           format-charging = "{capcity}% {icon}";
           format-plugged = "{capacity}% {icon}";
+          format-icons = [ "" "" "" "" "" ];
 
           states = {
             critical = 15;
