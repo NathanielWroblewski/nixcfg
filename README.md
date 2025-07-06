@@ -124,9 +124,9 @@ $ nix-shell -p sops neovim --run "EDITOR=nvim sops ./secrets/sops/secrets.yaml"
 
 TODO
 ---
+- sanity check terminal theme
+- animated backgrounds with swww
 - configure waybar
-- configure swaylock-effects
-  - https://man.archlinux.org/man/swaylock.1
 - configure tui-greet
 - configure shell
 - configure editor
@@ -134,5 +134,7 @@ TODO
 - use sops-nix to encrypt an SSH key
 - setup themes
   - colors / themes
+  - inject themes into nautilus etc
 - setup remaining desktop services
 - host font packages, see https://discourse.nixos.org/t/guidelines-on-packaging-fonts/7683/2
+- remove apple-fonts flake
