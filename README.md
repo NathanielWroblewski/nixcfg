@@ -126,14 +126,13 @@ TODO
 ---
 - configure waybar
 - configure swaylock-effects
+  - https://man.archlinux.org/man/swaylock.1
 - configure tui-greet
 - configure shell
 - configure editor
 - unify clipboards
 - use sops-nix to encrypt an SSH key
 - setup themes
-  - font with ligatures
   - colors / themes
-- drop desktop environment
 - setup remaining desktop services
-- host font packages
+- host font packages, see https://discourse.nixos.org/t/guidelines-on-packaging-fonts/7683/2

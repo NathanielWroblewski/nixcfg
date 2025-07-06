@@ -3,6 +3,8 @@ let
   home = builtins.getEnv "HOME";
 in
 {
+  # For configuration options, see: https://github.com/Alexays/Waybar/wiki/Configuration
+
   # File | Help
   # notifications | microphone | speakers | bluetooth | ethernet/wifi | battery | date | clock
   programs.waybar = {

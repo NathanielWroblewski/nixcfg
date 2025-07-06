@@ -6,6 +6,7 @@ in
   cmd = trim ''
     ${pkgs.swaylock-effects}/bin/swaylock -f \
       --image /home/nathaniel/Pictures/.background-image.jpg \
+      --font "SFProDisplay Nerd Font" \
       --clock \
       --indicator \
       --indicator-radius 120 \
