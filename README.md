@@ -168,3 +168,6 @@ TODO
 - use sops-nix to encrypt an SSH key
 - host font packages, see https://discourse.nixos.org/t/guidelines-on-packaging-fonts/7683/2
 - remove apple-fonts flake
+- learn more niri hotkeys
+- learn more helix hotkeys
+- remap more mac hotkeys
