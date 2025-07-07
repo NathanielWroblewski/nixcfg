@@ -5,6 +5,7 @@ let
 
   fonts = constants.themes.fonts;
   theme = constants.themes.colors.active;
+  paths = constants.filepaths;
 
   foreground = hex_to_rgb theme.primary.foreground;
   red = hex_to_rgb theme.normal.red;
@@ -23,7 +24,7 @@ in
       --font "${fonts.sans}" \
       --grace 1 \
       --ignore-empty-password \
-      --image "$HOME/Pictures/.background-image.jpg" \
+      --image "${paths.background_image}" \
       --indicator-caps-lock \
       --indicator-idle-visible \
       --indicator-radius 120 \
