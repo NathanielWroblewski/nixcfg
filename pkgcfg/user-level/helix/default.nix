@@ -21,6 +21,10 @@
         indent-guides.render = true;
         inline-diagnostics.cursor-line = "hint";
       };
+      keys.normal = {
+        "C-c" = ":clipboard-yank";
+        "C-v" = ":clipboard-paste";
+      };
     };
     themes = {
       catppuccin_mocha_transparent = {
