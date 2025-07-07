@@ -159,17 +159,12 @@ $ ffmpeg -i ./input.mp4 -i ./tokyo-night-dark.png -lavfi '[0][1]haldclut,scale=3
 TODO
 ---
 - theme rofi
-- sanity check terminal theme
-- animated backgrounds with swww
-- configure waybar
+- add wlogout to waybar
+- theme nautilus
 - configure tui-greet
 - configure shell
 - configure editor
 - unify clipboards
 - use sops-nix to encrypt an SSH key
-- setup themes
-  - colors / themes
-  - inject themes into nautilus etc
-- setup remaining desktop services
 - host font packages, see https://discourse.nixos.org/t/guidelines-on-packaging-fonts/7683/2
 - remove apple-fonts flake
