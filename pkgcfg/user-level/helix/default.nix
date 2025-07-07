@@ -8,6 +8,7 @@
       theme = "catppuccin_mocha_transparent";
       editor = {
         clipboard-provider = "wayland";
+        default-yank-register = "+";
         line-number = "relative";
         cursorline = true;
         color-modes = true;
@@ -22,8 +23,12 @@
         inline-diagnostics.cursor-line = "hint";
       };
       keys.normal = {
-        "C-c" = ":clipboard-yank";
-        "C-v" = ":clipboard-paste";
+        "Cmd-c" = "yank";
+        "Cmd-v" = "paste_after";
+      };
+      keys.select = {
+        "Cmd-c" = "yank";
+        "Cmd-v" = "paste_after";
       };
     };
     themes = {

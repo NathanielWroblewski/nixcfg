@@ -17,6 +17,7 @@ in
         window_background_opacity = 0.85,
 
         adjust_window_size_when_changing_font_size = false,
+        enable_kitty_keyboard = true,
         enable_scroll_bar = true,
         enable_wayland = true,
         hide_tab_bar_if_only_one_tab = true,
