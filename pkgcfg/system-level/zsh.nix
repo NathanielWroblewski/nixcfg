@@ -12,9 +12,10 @@
     autosuggestions.enable = true;
     enableLsColors = true;
 
-    # Syntax highlighting breaks terminal ligatures, see:
+    # Syntax highlighting breaks terminal ligatures unless quoted, see:
     # https://github.com/wezterm/wezterm/issues/2331#issuecomment-1200560007
-    syntaxHighlighting.enable = false;
+    # and https://github.com/zsh-users/zsh-syntax-highlighting/issues/750
+    syntaxHighlighting.enable = true;
 
     promptInit =
       if (pkgs.starship or null) != null
