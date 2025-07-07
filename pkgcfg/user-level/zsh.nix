@@ -8,12 +8,14 @@
     enable = true;
 
     enableCompletion = true;
-    syntaxHighlighting.enable = true;
-
     autosuggestion = {
       enable = true;
       strategy = [ "history" ];
     };
+
+    # Syntax highlighting breaks terminal ligatures, see:
+    # https://github.com/wezterm/wezterm/issues/2331#issuecomment-1200560007
+    syntaxHighlighting.enable = false;
 
     shellAliases = {
       ll = "ls -l";

@@ -13,8 +13,11 @@ in
     extraConfig = ''
       return {
         color_scheme = '${theme.name.titleized}', 
-        font = wezterm.font('${fonts.mono}'),
         window_background_opacity = 0.85,
+        font = wezterm.font {
+          family = '${fonts.mono}',
+          harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
+        },
 
         adjust_window_size_when_changing_font_size = false,
         enable_kitty_keyboard = true,

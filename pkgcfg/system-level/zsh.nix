@@ -9,9 +9,12 @@
     enable = true;
 
     enableCompletion = true;
-    syntaxHighlighting.enable = true;
     autosuggestions.enable = true;
     enableLsColors = true;
+
+    # Syntax highlighting breaks terminal ligatures, see:
+    # https://github.com/wezterm/wezterm/issues/2331#issuecomment-1200560007
+    syntaxHighlighting.enable = false;
 
     promptInit =
       if (pkgs.starship or null) != null
