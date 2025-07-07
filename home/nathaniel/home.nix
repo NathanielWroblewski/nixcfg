@@ -41,7 +41,8 @@ in
     ../../pkgcfg/user-level/keybase.nix
     ../../pkgcfg/user-level/niri.nix
     ../../pkgcfg/user-level/rofi.nix
-    ../../pkgcfg/user-level/swaybg.nix
+    ../../pkgcfg/user-level/stylix.nix
+    # ../../pkgcfg/user-level/swaybg.nix
     ../../pkgcfg/user-level/swayidle.nix
     ../../pkgcfg/user-level/waybar.nix
     ../../pkgcfg/user-level/wezterm.nix
