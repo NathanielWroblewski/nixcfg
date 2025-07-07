@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   packages = with pkgs; [
-    swaybg # set background images
     brave # browser
     vlc # media player
     _1password-gui # password manager application

@@ -149,15 +149,13 @@ $ lutgen apply -p tokyo-night-dark -o ./output-image.jpg ./input-image.jpg
 
 If using a background video, you can use lutgen to generate the look-up table:
 ```sh
-$ lutgen preset tokyo-night-dark --output tokyo-night-dark.cube
+$ lutgen generate -p tokyo-night-dark --output tokyo-night-dark.png
 ```
 
 Then pass the look-up table into `ffmpeg`:
 ```sh
-$ ffmpeg -i ./input.mp4 -vf lut3d=tokyo-night-dark.cube -c:a copy ./output.mp4
+$ ffmpeg -i ./input.mp4 -i ./tokyo-night-dark.png -lavfi '[0][1]haldclut,scale=3440:-1:force_original_aspect_ratio=decrease,crop=3440:1440"' -c:a copy ./output.mp4
 ```
-
-
 
 TODO
 ---
