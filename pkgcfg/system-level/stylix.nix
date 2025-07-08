@@ -18,6 +18,10 @@ in
         package = pkgs.jetbrains-mono;
         name = fonts.mono;
       };
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
     };
   };
 }
