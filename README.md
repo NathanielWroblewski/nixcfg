@@ -158,6 +158,7 @@ $ ffmpeg -i ./input.mp4 -i ./tokyo-night-dark.png -lavfi '[0][1]haldclut,scale=3
 
 TODO
 ---
+- disable scroll wheel tabbing in brave
 - finish stylix theming
 - consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
 - import apple cursors
@@ -165,6 +166,7 @@ TODO
 - add wlogout to waybar
 - theme nautilus
 - configure tui-greet
+- consider swapping tui-greet for GDM with whitesur-gtk-theme
 - configure shell
 - configure editor
 - unify clipboards

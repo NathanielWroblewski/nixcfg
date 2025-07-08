@@ -16,5 +16,12 @@
     #   dark = "WhiteSur-dark";
     #   light = "WhiteSur-light";
     # };
+
+    # find the cursors located at /run/current-system/sw/share/icons
+    cursor = {
+      name = "capitaine-cursors-white";
+      package = pkgs.capitaine-cursors;
+      size = 48;
+    };
   };
 }
