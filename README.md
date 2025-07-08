@@ -161,7 +161,7 @@ TODO
 - disable scroll wheel tabbing in brave
 - finish stylix theming
 - consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
-- import apple cursors
+- add noto font emoji
 - theme rofi
 - add wlogout to waybar
 - theme nautilus
