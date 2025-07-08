@@ -1,11 +1,18 @@
 rec {
-  active = tokyo_night;
+  terminal = tokyo_night; # wezterm
+  lockscreen = tokyo_night; # swaylock-effects
+  tray = tokyo_night; # waybar
+  global = tokyo_night_storm; # stylix
+
+  # hyphenated names are used by stylix to map to:
+  # https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
 
   tokyo_night = {
     name = {
       titleized = "Tokyo Night";
       snake = "tokyo_night";
       oneword = "tokyonight";
+      hyphenated = "tokyo-night-dark";
     };
 
     bright = {
@@ -33,6 +40,12 @@ rec {
     primary = {
       background = "#1a1b26";
       foreground = "#a9b1d6";
+    };
+  };
+
+  tokyo_night_storm = {
+    name = {
+      hyphenated = "tokyo-night-storm";
     };
   };
 }

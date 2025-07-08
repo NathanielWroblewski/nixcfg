@@ -1,7 +1,7 @@
 { constants, ... }:
 let
   fonts = constants.themes.fonts;
-  colors = constants.themes.colors.active;
+  colors = constants.themes.colors.tray;
 in
 {
   # For configuration options, see: https://github.com/Alexays/Waybar/wiki/Configuration

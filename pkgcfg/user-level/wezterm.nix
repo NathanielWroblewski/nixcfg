@@ -1,6 +1,6 @@
 { constants, ... }:
 let
-  theme = constants.themes.colors.active;
+  theme = constants.themes.colors.terminal;
   fonts = constants.themes.fonts;
 in
 {

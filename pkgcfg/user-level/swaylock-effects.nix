@@ -4,7 +4,7 @@ let
   hex_to_rgb = str: lib.replaceStrings [ "#" ] [ "" ] str;
 
   fonts = constants.themes.fonts;
-  theme = constants.themes.colors.active;
+  theme = constants.themes.colors.lockscreen;
   paths = constants.filepaths;
 
   foreground = hex_to_rgb theme.primary.foreground;

@@ -158,6 +158,9 @@ $ ffmpeg -i ./input.mp4 -i ./tokyo-night-dark.png -lavfi '[0][1]haldclut,scale=3
 
 TODO
 ---
+- finish stylix theming
+- consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
+- import apple cursors
 - theme rofi
 - add wlogout to waybar
 - theme nautilus
