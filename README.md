@@ -163,9 +163,14 @@ TODO
 - consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
 - add noto font emoji
 - theme rofi
+  - https://github.com/newmanls/rofi-themes-collection
+  - builtin rofi themes probably fine
+  - https://github.com/adi1090x/rofi
+  - https://www.reddit.com/r/NixOS/comments/nrp2es/setting_rofi_theme/
 - add wlogout to waybar
 - theme nautilus
 - configure tui-greet
+  - https://github.com/apognu/tuigreet
 - consider swapping tui-greet for GDM with whitesur-gtk-theme
 - configure shell
 - configure editor
@@ -176,3 +181,23 @@ TODO
 - learn more niri hotkeys
 - learn more helix hotkeys
 - remap more mac hotkeys
+- cmd+left,right cmd+shift+left,right
+- wifi commands/gui
+  - wpctl?
+- sound gui
+- mount my NAS
+- niri launch on start wezterm and cd to nixcfg
+- get a default serif (Libre Baskerville)
+- get a default sans-serif (Monteserat?)
+- test that noto font emojis worked
+- switch to librewolf?
+  - https://www.youtube.com/watch?v=GaM_paeX7TI
+  - https://gitlab.com/rycee/nur-expressions/-/tree/master/pkgs/firefox-addons?ref_type=heads
+- chromium options:
+  - https://github.com/nix-community/home-manager/blob/f7848d3e5f15ed02e3f286029697e41ee31662d7/modules/programs/chromium.nix
+  - https://home-manager-options.extranix.com/?query=chromium&release=release-25.05
+  - search.brave.com
+  - https://github.com/parkerbedlan/dotfiles/blob/312913557ed31384e4402e1326237d4ce7efad34/modules/home/browser.nix#L288
+- consider switching nautilus for dolphin or another options
+  - look for mac theming there
+- connecting to NAS
