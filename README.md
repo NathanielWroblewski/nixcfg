@@ -158,7 +158,6 @@ $ ffmpeg -i ./input.mp4 -i ./tokyo-night-dark.png -lavfi '[0][1]haldclut,scale=3
 
 TODO
 ---
-- disable scroll wheel tabbing in brave
 - finish stylix theming
 - consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
 - add noto font emoji
@@ -181,7 +180,7 @@ TODO
 - learn more niri hotkeys
 - learn more helix hotkeys
 - remap more mac hotkeys
-- cmd+left,right cmd+shift+left,right
+  - cmd+left,right cmd+shift+left,right
 - wifi commands/gui
   - wpctl?
 - sound gui
@@ -193,11 +192,6 @@ TODO
 - switch to librewolf?
   - https://www.youtube.com/watch?v=GaM_paeX7TI
   - https://gitlab.com/rycee/nur-expressions/-/tree/master/pkgs/firefox-addons?ref_type=heads
-- chromium options:
-  - https://github.com/nix-community/home-manager/blob/f7848d3e5f15ed02e3f286029697e41ee31662d7/modules/programs/chromium.nix
-  - https://home-manager-options.extranix.com/?query=chromium&release=release-25.05
-  - search.brave.com
-  - https://github.com/parkerbedlan/dotfiles/blob/312913557ed31384e4402e1326237d4ce7efad34/modules/home/browser.nix#L288
 - consider switching nautilus for dolphin or another options
   - look for mac theming there
 - connecting to NAS
