@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   packages = with pkgs; [
+    librewolf # browser
     brave # browser
     vlc # media player
     _1password-gui # password manager application
