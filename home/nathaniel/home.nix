@@ -40,6 +40,7 @@ in
     ../../pkgcfg/user-level/gtk.nix
     ../../pkgcfg/user-level/helix/default.nix
     ../../pkgcfg/user-level/keybase.nix
+    ../../pkgcfg/user-level/librewolf.nix
     ../../pkgcfg/user-level/niri.nix
     ../../pkgcfg/user-level/rofi.nix
     ../../pkgcfg/user-level/stylix.nix

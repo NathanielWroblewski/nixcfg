@@ -1,6 +1,6 @@
 # nixpkgs configuration shared across all hosts/devices
 
-{ outputs, ... }: {
+{ outputs, lib, ... }: {
   nixpkgs = {
     # Specify overlays to add or modify dependency packages
     overlays = [
@@ -23,6 +23,10 @@
     config = {
       # Allow packages which aren't FOSS, e.g. zoom, slack, spotify, etc.
       allowUnfree = true;
+
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+        "onepassword-password-manager"
+      ];
     };
   };
 }

@@ -5,6 +5,11 @@
       gtk.enable = false;
       helix.enable = false;
       wezterm.enable = false;
+
+      librewolf = {
+        enable = true;
+        profileNames = [ "browsing" ];
+      };
     };
 
     polarity = "light";

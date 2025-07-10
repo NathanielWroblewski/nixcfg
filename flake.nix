@@ -19,6 +19,7 @@
 
     # nixpkgs is the main source for nix packages, pins to unstable for latest
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     # a secondary version is specified to allow for specifying the latest stable release
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 

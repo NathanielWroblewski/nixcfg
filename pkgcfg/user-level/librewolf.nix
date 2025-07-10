@@ -6,7 +6,7 @@ in
   programs.librewolf = {
     enable = true;
 
-    profiles.default = {
+    profiles.browsing = {
       isDefault = true;
 
       # additional settings found in about:config in browser
@@ -25,28 +25,27 @@ in
       # Provide a CSS string
       # userChrome = '';
 
-      extensions = [
-        inputs.firefox-addons.packages."x86_64-linux"."1password-x-password-manager"
-        inputs.firefox-addons.packages."x86_64-linux".absolute-enable-right-click
-        inputs.firefox-addons.packages."x86_64-linux".amp2html
-        inputs.firefox-addons.packages."x86_64-linux".block-origin
-        inputs.firefox-addons.packages."x86_64-linux".decentraleyes
-        inputs.firefox-addons.packages."x86_64-linux".don-t-fuck-with-paste
-        inputs.firefox-addons.packages."x86_64-linux".gaoptout
-        inputs.firefox-addons.packages."x86_64-linux".metamask
-        inputs.firefox-addons.packages."x86_64-linux".new-tab-override
-        inputs.firefox-addons.packages."x86_64-linux".react-devtools
-        inputs.firefox-addons.packages."x86_64-linux".sponsorblock
-      ];
+      extensions = {
+        force = true;
+        packages = [
+          # inputs.firefox-addons.packages."x86_64-linux"."1password-x-password-manager"
+          inputs.firefox-addons.packages."x86_64-linux".absolute-enable-right-click
+          inputs.firefox-addons.packages."x86_64-linux".amp2html
+          inputs.firefox-addons.packages."x86_64-linux".decentraleyes
+          inputs.firefox-addons.packages."x86_64-linux".don-t-fuck-with-paste
+          # inputs.firefox-addons.packages."x86_64-linux".gaoptout
+          inputs.firefox-addons.packages."x86_64-linux".metamask
+          inputs.firefox-addons.packages."x86_64-linux".new-tab-override
+          inputs.firefox-addons.packages."x86_64-linux".react-devtools
+          inputs.firefox-addons.packages."x86_64-linux".sponsorblock
+          inputs.firefox-addons.packages."x86_64-linux".ublock-origin
+        ];
+      };
 
-      bookmarks = [
-        # {
-        #   name = "";
-        #   tags = [];
-        #   keyword = "";
-        #   url = "";
-        # }
-      ];
+      # bookmarks = {
+      #   force = true;
+      #   settings = { };
+      # };
 
       search = {
         force = true;
@@ -54,7 +53,7 @@ in
         privateDefault = "Brave";
 
         engines = {
-          "NixPkgs" = {
+          nixpkgs = {
             definedAliases = [ "@np" ];
             icon = snowflake;
             urls = [
@@ -78,7 +77,7 @@ in
             ];
           };
 
-          "NixOS Options" = {
+          nixosOptions = {
             definedAliases = [ "@no" ];
             icon = snowflake;
             urls = [
@@ -98,7 +97,7 @@ in
             ];
           };
 
-          "MyNixOS" = {
+          myNixOS = {
             definedAliases = [ "@nm" ];
             icon = snowflake;
             urls = [
@@ -114,7 +113,7 @@ in
             ];
           };
 
-          "Noogle" = {
+          noogle = {
             definedAliases = [ "@ng" ];
             urls = [
               {
@@ -129,7 +128,7 @@ in
             ];
           };
 
-          "Perplexity" = {
+          perplexity = {
             definedAliases = [ "@p" ];
             urls = [
               {
@@ -144,7 +143,7 @@ in
             ];
           };
 
-          "YouTube" = {
+          youtube = {
             definedAliases = [ "@yt" ];
             urls = [
               {
@@ -159,7 +158,7 @@ in
             ];
           };
 
-          "Emojis" = {
+          emojis = {
             definedAliases = [ "@e" ];
             urls = [
               {
@@ -174,7 +173,7 @@ in
             ];
           };
 
-          "Brave" = {
+          brave = {
             definedAliases = [ "@b" ];
             urls = [
               {
