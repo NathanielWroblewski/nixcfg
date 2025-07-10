@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 let
   snowflake = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
 in
@@ -28,17 +28,17 @@ in
       extensions = {
         force = true;
         packages = [
-          # inputs.firefox-addons.packages."x86_64-linux"."1password-x-password-manager"
-          inputs.firefox-addons.packages."x86_64-linux".absolute-enable-right-click
-          inputs.firefox-addons.packages."x86_64-linux".amp2html
-          inputs.firefox-addons.packages."x86_64-linux".decentraleyes
-          inputs.firefox-addons.packages."x86_64-linux".don-t-fuck-with-paste
-          # inputs.firefox-addons.packages."x86_64-linux".gaoptout
-          inputs.firefox-addons.packages."x86_64-linux".metamask
-          inputs.firefox-addons.packages."x86_64-linux".new-tab-override
-          inputs.firefox-addons.packages."x86_64-linux".react-devtools
-          inputs.firefox-addons.packages."x86_64-linux".sponsorblock
-          inputs.firefox-addons.packages."x86_64-linux".ublock-origin
+          pkgs.firefox-addons."1password-x-password-manager"
+          pkgs.firefox-addons.absolute-enable-right-click
+          pkgs.firefox-addons.amp2html
+          pkgs.firefox-addons.decentraleyes
+          pkgs.firefox-addons.don-t-fuck-with-paste
+          pkgs.firefox-addons.gaoptout
+          pkgs.firefox-addons.metamask
+          pkgs.firefox-addons.new-tab-override
+          pkgs.firefox-addons.react-devtools
+          pkgs.firefox-addons.sponsorblock
+          pkgs.firefox-addons.ublock-origin
         ];
       };
 

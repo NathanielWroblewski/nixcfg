@@ -21,4 +21,6 @@
       config.allowUnfree = true;
     };
   };
+
+  firefox-addons = inputs.firefox-addons.overlays.default;
 }
