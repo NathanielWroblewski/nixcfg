@@ -31,6 +31,7 @@ in
           pkgs.firefox-addons."1password-x-password-manager"
           pkgs.firefox-addons.absolute-enable-right-click
           pkgs.firefox-addons.amp2html
+          pkgs.firefox-addons.catppuccin-mocha-mauve
           pkgs.firefox-addons.decentraleyes
           pkgs.firefox-addons.don-t-fuck-with-paste
           pkgs.firefox-addons.gaoptout

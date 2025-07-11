@@ -7,8 +7,9 @@
       wezterm.enable = false;
 
       librewolf = {
-        enable = true;
-        profileNames = [ "browsing" ];
+        enable = false;
+        # profileNames = [];
+        # colorTheme.enable = true;
       };
     };
 

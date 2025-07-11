@@ -166,6 +166,7 @@ TODO
   - builtin rofi themes probably fine
   - https://github.com/adi1090x/rofi
   - https://www.reddit.com/r/NixOS/comments/nrp2es/setting_rofi_theme/
+- get niri to launch rofi in a centered window
 - add wlogout to waybar
 - theme nautilus
 - configure tui-greet

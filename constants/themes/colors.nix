@@ -2,6 +2,7 @@ rec {
   terminal = tokyo_night; # wezterm
   lockscreen = tokyo_night; # swaylock-effects
   tray = tokyo_night; # waybar
+  app_launcher = tokyo_night;
   global = tokyo_night_storm; # stylix
 
   # hyphenated names are used by stylix to map to:
