@@ -27,19 +27,19 @@ in
 
       extensions = {
         force = true;
-        packages = [
+        packages = with pkgs.firefox-addons; [
           pkgs.firefox-addons."1password-x-password-manager"
-          pkgs.firefox-addons.absolute-enable-right-click
-          pkgs.firefox-addons.amp2html
-          pkgs.firefox-addons.catppuccin-mocha-mauve
-          pkgs.firefox-addons.decentraleyes
-          pkgs.firefox-addons.don-t-fuck-with-paste
-          pkgs.firefox-addons.gaoptout
-          pkgs.firefox-addons.metamask
-          pkgs.firefox-addons.new-tab-override
-          pkgs.firefox-addons.react-devtools
-          pkgs.firefox-addons.sponsorblock
-          pkgs.firefox-addons.ublock-origin
+          absolute-enable-right-click
+          amp2html
+          catppuccin-mocha-mauve
+          decentraleyes
+          don-t-fuck-with-paste
+          gaoptout
+          metamask
+          new-tab-override
+          react-devtools
+          sponsorblock
+          ublock-origin
         ];
       };
 
