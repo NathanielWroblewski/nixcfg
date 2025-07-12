@@ -8,8 +8,6 @@
 
     # where rofi should be positioned
     location = "center";
-    # xoffset
-    # yoffset
 
     modes = [ "drun" "run" "filebrowser" "window" ];
 

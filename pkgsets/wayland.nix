@@ -8,7 +8,7 @@
     waybar # system tray / bar
     swayidle # wayland idle manager
     swaylock-effects # wayland screen locking utility
-    rofi # application launcher and window switcher
+    fuzzel # application launcher
     nautilus # file explorer
     swaybg # set background images
   ];

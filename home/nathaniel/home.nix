@@ -36,13 +36,13 @@ in
 
     # Import user-level package configurations
     ../../pkgcfg/user-level/fonts.nix
+    ../../pkgcfg/user-level/fuzzel.nix
     ../../pkgcfg/user-level/git.nix
     ../../pkgcfg/user-level/gtk.nix
     ../../pkgcfg/user-level/helix/default.nix
     ../../pkgcfg/user-level/keybase.nix
     ../../pkgcfg/user-level/librewolf.nix
     ../../pkgcfg/user-level/niri.nix
-    ../../pkgcfg/user-level/rofi.nix
     ../../pkgcfg/user-level/stylix.nix
     ../../pkgcfg/user-level/swaybg.nix
     ../../pkgcfg/user-level/swayidle.nix
