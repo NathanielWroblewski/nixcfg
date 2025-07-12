@@ -23,7 +23,7 @@ in
         font = fonts.mono + ":size=12";
         use-bold = true;
         placeholder = "Search…";
-        prompt = "\"  \"";
+        prompt = "\"  \""; # quoting preserves whitespace
         icon-theme = "hicolor";
         icons-enabled = true;
         hide-before-typing = false;
