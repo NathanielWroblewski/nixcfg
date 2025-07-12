@@ -41,7 +41,7 @@ in
         y-margin = 0;
         lines = 5;
         width = 30;
-        horizontal-pad = 20;
+        horizontal-pad = 15;
         vertical-pad = 10;
         inner-pad = 5;
         line-height = 22;
