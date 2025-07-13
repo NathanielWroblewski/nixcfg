@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   packages = with pkgs; [
+    pavucontrol # audio settings gui
     librewolf # browser
     brave # browser
     vlc # media player
