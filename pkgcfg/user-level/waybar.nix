@@ -94,7 +94,6 @@ in
           tooltip-format = "{ifname} via {gwaddr} ";
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "Disconnected ⚠";
-          on-click = "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh";
         };
 
         battery = {
