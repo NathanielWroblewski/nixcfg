@@ -22,7 +22,8 @@
       ll = "ls -l";
     };
 
-    # dotDir = ../dotfiles;
+    # add content to .zshrc
+    initContent = builtins.readFile ../../dotfiles/zshrc.zsh;
 
     history = {
       ignoreAllDups = true;

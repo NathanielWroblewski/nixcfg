@@ -68,4 +68,9 @@ in
     TERMINAL = "wezterm";
     EDITOR = "hx";
   };
+
+  home.file."bin/wifi" = {
+    text = builtins.readFile ../../scripts/wifi.sh;
+    executable = true;
+  };
 }
