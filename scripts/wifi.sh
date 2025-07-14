@@ -16,6 +16,7 @@ USAGE=$(cat <<'EOF'
 Usage: wifi <command> [args]
 
 Convenience commands for interacting with NetworkManager (nmcli)
+to {en,dis}able wifi, list networks, {dis,}connect to a network, etc.
 
 Commands:
   on              Enable wifi
@@ -142,10 +143,10 @@ main () {
     network::wifi.join "$@"
   elif within "drop" "disconnect" $command_; then
     network::wifi.disconnect
-  elif within "help" "-h" "--help" $command_; then
-    cli::help.print
   elif within "connection" "active" "current" "status" $command_; then
     network::wifi.active_connection
+  elif within "help" "-h" "--help" $command_; then
+    cli::help.print
   else
     errors::bad_command.print "$command_"
     cli::help.print

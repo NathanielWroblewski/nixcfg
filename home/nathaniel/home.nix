@@ -73,4 +73,9 @@ in
     text = builtins.readFile ../../scripts/wifi.sh;
     executable = true;
   };
+
+  home.file."bin/sound" = {
+    text = builtins.readFile ../../scripts/sound.sh;
+    executable = true;
+  };
 }
