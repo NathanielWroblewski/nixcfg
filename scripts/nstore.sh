@@ -18,7 +18,8 @@ Usage: nstore <command> [args]
 Utility for visualizing nix-store disk usage.
 
 Commands:
-  syspkgs         List system packages by disk usage (aggregates transitive dependencies)
+  list            List packages by disk usage (aggregates transitive dependencies)
+  ls              List packages by disk usage (aggregates transitive dependencies)
   sysdep <path>   Show the dependency tree for a given system dependency nix store path
   help            Print this help message
   -h              Print this help message
@@ -59,14 +60,34 @@ errors::bad_command.print () {
 }
 
 # TODO: Figure out how to determine slab index
-system::package.all () {
+pkgs::system.all () {
   nix eval --json .#nixosConfigurations.slab.config.environment.systemPackages \
-  | jq -r '.[]' \
-  | grep -v '4ankx7djqh6if0apg5fcg84kdx8d3isp-getconf-glibc-2.40-66' \
-  | parallel --no-notice 'nix path-info --closure-size {}' \
-  | sort -rn -k2 \
-  | uniq \
-  | awk ' \
+    | jq -r '.[]'
+}
+
+pkgs::user.all () {
+  local home_manager_=$(realpath ~/.local/state/nix/profiles/home-manager)
+  
+  nix-store --query --references $home_manager_ \
+    | grep -vE '\.(sh|.css|.json|.ini)$' \
+    | grep -vE 'home-manager-(files|path|generation)$'
+}
+
+pkgs::installed.all () {
+  { pkgs::system.all; pkgs::user.all; } | sort -u
+}
+
+pkgs::installed.join_size () {
+  pkgs::installed.all \
+    | parallel --no-notice 'nix path-info --closure-size {}' \
+    | sort -rn -k2 \
+    | uniq \
+    | format::size.humanize \
+    | column -s $'\t' -t
+}
+
+format::size.humanize () {
+  awk ' \
     BEGIN { print "\033[1;35m" "PATH\tSIZE" "\033[0m" } \
     { \
       size = $2; \
@@ -80,8 +101,7 @@ system::package.all () {
         } \
       } \
       printf "%s\t%9d B\n", $1, size; \
-    }' \
-  | column -s $'\t' -t
+    }'   
 }
 
 system::package.dependency_tree () {
@@ -93,8 +113,8 @@ system::package.dependency_tree () {
 main () {
   local command_=${1:-help}; shift || true
 
-  if equal "syspkgs" $command_; then
-    system::package.all
+  if within "list" "ls" $command_; then
+    pkgs::installed.join_size
   elif equal "sysdep" $command_; then
     system::package.dependency_tree $@
   elif within "help" "-h" "--help" $command_; then
