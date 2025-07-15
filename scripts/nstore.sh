@@ -20,7 +20,7 @@ Utility for visualizing nix-store disk usage.
 Commands:
   list            List packages by disk usage (aggregates transitive dependencies)
   ls              List packages by disk usage (aggregates transitive dependencies)
-  sysdep <path>   Show the dependency tree for a given system dependency nix store path
+  deps <path>     Show the dependency tree for a given nix store path
   help            Print this help message
   -h              Print this help message
   --help          Print this help message
@@ -60,12 +60,13 @@ errors::bad_command.print () {
 }
 
 # TODO: Figure out how to determine slab index
-pkgs::system.all () {
+nixstore::path.system_packages () {
   nix eval --json .#nixosConfigurations.slab.config.environment.systemPackages \
-    | jq -r '.[]'
+    | jq -r '.[]' \
+    | nixstore::path.filter_unrealized
 }
 
-pkgs::user.all () {
+nixstore::path.user_packages () {
   local home_manager_=$(realpath ~/.local/state/nix/profiles/home-manager)
   
   nix-store --query --references $home_manager_ \
@@ -73,38 +74,62 @@ pkgs::user.all () {
     | grep -vE 'home-manager-(files|path|generation)$'
 }
 
-pkgs::installed.all () {
-  { pkgs::system.all; pkgs::user.all; } | sort -u
+nixstore::path.installed_packages () {
+  {
+    nixstore::path.system_packages;
+    nixstore::path.user_packages;
+  } | sort -u
 }
 
-pkgs::installed.join_size () {
-  pkgs::installed.all \
-    | parallel --no-notice 'nix path-info --closure-size {}' \
+nixstore::path.join_size () {
+  parallel --no-notice --colsep '\t' --plus \
+    'nix path-info --closure-size {1}'
+}
+
+nixstore::path.join_name () {
+  parallel --no-notice --colsep '\t' --plus \
+    'echo -en "{}\t"; nix derivation show {1} | jq -r "to_entries[0].value.env.pname"'
+}
+
+nixstore::path.installed_packages_by_size () {
+  nixstore::path.installed_packages \
+    | nixstore::path.join_size \
+    | nixstore::path.join_name \
     | sort -rn -k2 \
     | uniq \
-    | format::size.humanize \
+    | format::bytes.humanize \
     | column -s $'\t' -t
 }
 
-format::size.humanize () {
+nixstore::path.filter_unrealized () {
+  while read -r path_; do
+    if [ -e $path_ ]; then
+      echo $path_;
+    fi
+  done
+}
+
+format::bytes.humanize () {
   awk ' \
-    BEGIN { print "\033[1;35m" "PATH\tSIZE" "\033[0m" } \
-    { \
-      size = $2; \
+    BEGIN { \
+      print "\033[1;35m" "NAME\tPATH\tSIZE" "\033[0m"; \
       human[1073741824]="GB"; \
       human[1048576]="MB"; \
       human[1024]="KB"; \
+    } \
+    { \
+      path=$1;size=$2;name=$3; \
       for (x = 1073741824; x >= 1024; x /= 1024) {  \
         if (size >= x) { \
-          printf "%s\t%9.2f %s\n", $1, size / x, human[x]; \
+          printf "%s\t%s\t%9.2f %s\n", name, path, size / x, human[x]; \
           next \
         } \
       } \
-      printf "%s\t%9d B\n", $1, size; \
+      printf "%s\t%s\t%9d B\n", name, path, size; \
     }'   
 }
 
-system::package.dependency_tree () {
+nixstore::path.dependency_tree () {
   local path_=$1; shift
   
   nix why-depends $(readlink -f /nix/var/nix/profiles/system) $path_
@@ -114,9 +139,9 @@ main () {
   local command_=${1:-help}; shift || true
 
   if within "list" "ls" $command_; then
-    pkgs::installed.join_size
-  elif equal "sysdep" $command_; then
-    system::package.dependency_tree $@
+    nixstore::path.installed_packages_by_size
+  elif equal "deps" $command_; then
+    nixstore::path.dependency_tree $@
   elif within "help" "-h" "--help" $command_; then
     cli::help.print
   else
