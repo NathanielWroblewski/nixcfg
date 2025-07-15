@@ -2,7 +2,6 @@
   packages = with pkgs; [
     pavucontrol # audio settings gui
     librewolf # browser
-    brave # browser
     vlc # media player
     _1password-gui # password manager application
     _1password-cli # password manager cli

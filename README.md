@@ -174,7 +174,6 @@ TODO
 - learn more helix hotkeys
 - remap more mac hotkeys
   - cmd+left,right cmd+shift+left,right
-- sound gui
 - niri launch on start wezterm and cd to nixcfg
 - get a default serif (Libre Baskerville)
 - get a default sans-serif (Monteserat?)
