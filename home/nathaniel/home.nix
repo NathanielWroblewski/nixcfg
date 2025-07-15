@@ -78,4 +78,9 @@ in
     text = builtins.readFile ../../scripts/sound.sh;
     executable = true;
   };
+
+  home.file."bin/nstore" = {
+    text = builtins.readFile ../../scripts/nstore.sh;
+    executable = true;
+  };
 }

@@ -36,7 +36,7 @@ in
           don-t-fuck-with-paste
           gaoptout
           metamask
-          new-tab-override
+          new-tab-override # configure this extension to set focus on webpage, so clicking the address bar selects all
           react-devtools
           sponsorblock
           ublock-origin
