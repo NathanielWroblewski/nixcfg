@@ -161,7 +161,6 @@ TODO
 - finish stylix theming
 - consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
 - add wlogout to waybar
-- theme nautilus
 - configure tui-greet
   - https://github.com/apognu/tuigreet
 - consider swapping tui-greet for GDM with whitesur-gtk-theme
@@ -175,10 +174,7 @@ TODO
 - remap more mac hotkeys
   - cmd+left,right cmd+shift+left,right
 - niri launch on start wezterm and cd to nixcfg
-- get a default serif (Libre Baskerville)
 - get a default sans-serif (Monteserat?)
 - test that noto font emojis worked
-- consider switching nautilus for dolphin or another options
-  - look for mac theming there
 - connecting to NAS
 - print a document (necessary packages)
