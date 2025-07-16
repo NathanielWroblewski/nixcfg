@@ -182,4 +182,3 @@ TODO
   - look for mac theming there
 - connecting to NAS
 - print a document (necessary packages)
-- view a pdf (necessary packages)

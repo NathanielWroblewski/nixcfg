@@ -20,7 +20,6 @@
     # sed is pre-installed.
 
     # fonts
-    jetbrains-mono # mono font with ligature support
     noto-fonts-emoji # emojis
   ];
 }
