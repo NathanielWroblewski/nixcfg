@@ -43,13 +43,14 @@ in
 
       # Device-level package configuration
       ../../pkgcfg/system-level/1pass.nix # password manager
+      ../../pkgcfg/system-level/gvfs.nix # gnome virtual file system, allows nautilus to access NAS
       ../../pkgcfg/system-level/niri.nix # wayland compositor, tiling window manager
+      ../../pkgcfg/system-level/polkit.nix # enable policy kit back-end
       ../../pkgcfg/system-level/stylix.nix # themeing
       ../../pkgcfg/system-level/tuigreet.nix # display manager and login
       ../../pkgcfg/system-level/zsh.nix # shell
       # ../../pkgcfg/system-level/docker.nix
       # ../../pkgcfg/system-level/hyprland.nix
-      # ../../pkgcfg/system-level/polkit.nix
       # ../../pkgcfg/system-level/gpg.nix
       # ../../pkgcfg/system-level/steam.nix
       # ../../pkgcfg/system-level/niri.nix

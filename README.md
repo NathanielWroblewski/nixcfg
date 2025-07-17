@@ -158,6 +158,10 @@ $ ffmpeg -i ./input.mp4 -i ./tokyo-night-dark.png -lavfi '[0][1]haldclut,scale=3
 
 TODO
 ---
+- connecting to NAS
+  - setup rom library
+    - setup everdrives 
+- fix librewolf default search using ddg instead of brave
 - finish stylix theming
 - consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
 - add wlogout to waybar

@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   packages = with pkgs; [
+    polkit_gnome # policy kit client/agent for authorization
     pavucontrol # audio settings gui
     librewolf # browser
     vlc # media player

@@ -4,7 +4,6 @@
   # `$ nix search wget`
   packages = with pkgs; [
     zsh # shell
-    tmux # terminal multiplexer/window management
     git # version control
 
     neovim # text editor
@@ -21,5 +20,9 @@
 
     # fonts
     noto-fonts-emoji # emojis
+
+    # NAS
+    samba # for SMB into NAS, provides smbclient/smbtree, etc
+    gnome.gvfs # for Nautilus to discover and mount SMB shares
   ];
 }

@@ -39,10 +39,12 @@ in
     ../../pkgcfg/user-level/fuzzel.nix
     ../../pkgcfg/user-level/git.nix
     ../../pkgcfg/user-level/gtk.nix
+    ../../pkgcfg/user-level/gvfsd.nix # gnome virtual file system daemon, for nautilus to use SMB for NAS
     ../../pkgcfg/user-level/helix/default.nix
     ../../pkgcfg/user-level/keybase.nix
     ../../pkgcfg/user-level/librewolf.nix
     ../../pkgcfg/user-level/niri.nix
+    ../../pkgcfg/user-level/polkit-gnome.nix # enable policy kit client/agent
     ../../pkgcfg/user-level/stylix.nix
     ../../pkgcfg/user-level/swaybg.nix
     ../../pkgcfg/user-level/swayidle.nix
