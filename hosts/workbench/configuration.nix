@@ -11,6 +11,7 @@ let
   globalPkgset = import ../../pkgsets/global.nix { pkgs = pkgs; };
   peripheralsPkgset = import ../../pkgsets/peripherals.nix { pkgs = pkgs; };
   socialPkgset = import ../../pkgsets/social.nix { pkgs = pkgs; };
+  retroGamingPkgset = import ../../pkgsets/retro-gaming.nix { pkgs = pkgs; };
 in
 {
   imports =
@@ -70,6 +71,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs;
     socialPkgset.packages ++
+    retroGamingPkgset.packages ++
     peripheralsPkgset.packages ++
     waylandPkgset.packages ++
     themePkgset.packages ++
