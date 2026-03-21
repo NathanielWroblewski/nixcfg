@@ -83,6 +83,31 @@
             ./hosts/slab
           ];
         };
+
+        # defines a NixOS configuration named "workbench" for my framework desktop
+        workbench = nixpkgs.lib.nixosSystem {
+          # special args will be available in the inputs to downstream expressions/nix-files without having to index on config, etc.
+          # they are passed directly to each nix module in the modules list below
+          # you can access inputs, outputs, and constants in any of the nix modules without re-importing them again
+          specialArgs = {
+            inherit inputs outputs;
+            constants = {
+              filepaths = import ./constants/filepaths.nix;
+              users = import ./constants/users.nix;
+              themes = {
+                fonts = import ./constants/themes/fonts.nix;
+                colors = import ./constants/themes/colors.nix;
+              };
+            };
+          };
+
+          # modules placed here can be accessed via the config argument on downstream expressions/nix-files
+          # modules are typically a list of .nix files that define the actual system configuration
+          modules = [
+            inputs.stylix.nixosModules.stylix
+            ./hosts/workbench
+          ];
+        };
       };
     };
 }

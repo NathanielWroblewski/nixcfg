@@ -9,6 +9,8 @@ let
   waylandPkgset = import ../../pkgsets/wayland.nix { pkgs = pkgs; };
   themePkgset = import ../../pkgsets/themes.nix { pkgs = pkgs; };
   globalPkgset = import ../../pkgsets/global.nix { pkgs = pkgs; };
+  peripheralsPkgset = import ../../pkgsets/peripherals.nix { pkgs = pkgs; };
+  socialPkgset = import ../../pkgsets/social.nix { pkgs = pkgs; };
 in
 {
   imports =
@@ -19,6 +21,7 @@ in
       # Bootloader and setup
       ../../syscfg/shared/bootloader.nix
       ../../syscfg/shared/region.nix
+      ../../syscfg/workbench/firmware-updater.nix
 
       # Drivers and devices
       ../../syscfg/shared/drivers.nix
@@ -29,18 +32,22 @@ in
 
       # Networking
       ../../syscfg/shared/networking.nix
-      ../../syscfg/slab/networking.nix
+      ../../syscfg/workbench/networking.nix
       ../../syscfg/shared/firewall.nix
       ../../syscfg/shared/ssh.nix
+
+      # Peripheral support
+      ../../syscfg/workbench/wireplumber.nix # elgato wave 3 microphone support
+      ../../syscfg/workbench/thunderbolt.nix # caldigit TS4 over thunderbolt cxn
 
       # Theme
       ../../syscfg/shared/fonts.nix
 
       # Device-specific NixOS configuration
-      ../../syscfg/slab/nixos.nix
+      ../../syscfg/workbench/nixos.nix
 
       # Device-specific desktop environment
-      ../../syscfg/slab/desktop.nix
+      ../../syscfg/workbench/desktop.nix
 
       # Device-level package configuration
       ../../pkgcfg/system-level/1pass.nix # password manager
@@ -59,11 +66,11 @@ in
       # ../../pkgcfg/system-level/uwsm.nix
     ];
 
-  boot.initrd.luks.devices."luks-b99c70c5-5131-45b2-a318-88efa944325d".device = "/dev/disk/by-uuid/b99c70c5-5131-45b2-a318-88efa944325d";
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
+    socialPkgset.packages ++
+    peripheralsPkgset.packages ++
     waylandPkgset.packages ++
     themePkgset.packages ++
     globalPkgset.packages ++ [
@@ -72,8 +79,4 @@ in
       usbutils # for troubleshooting the Dock peripheral
       pciutils # for troubleshooting the Dock peripheral
     ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
 }

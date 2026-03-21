@@ -5,12 +5,6 @@
       gtk.enable = false;
       helix.enable = false;
       wezterm.enable = false;
-
-      librewolf = {
-        enable = false;
-        # profileNames = [];
-        # colorTheme.enable = true;
-      };
     };
 
     polarity = "light";
