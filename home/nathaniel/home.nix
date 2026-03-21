@@ -42,7 +42,6 @@ in
     ../../pkgcfg/user-level/gvfsd.nix # gnome virtual file system daemon, for nautilus to use SMB for NAS
     ../../pkgcfg/user-level/helix/default.nix
     ../../pkgcfg/user-level/keybase.nix
-    ../../pkgcfg/user-level/librewolf.nix
     ../../pkgcfg/user-level/niri.nix
     ../../pkgcfg/user-level/polkit-gnome.nix # enable policy kit client/agent
     ../../pkgcfg/user-level/stylix.nix

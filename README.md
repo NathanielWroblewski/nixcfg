@@ -161,7 +161,6 @@ TODO
 - connecting to NAS
   - setup rom library
     - setup everdrives 
-- fix librewolf default search using ddg instead of brave
 - finish stylix theming
 - consider moving iconTheme back into stylix and finding a theme that is better applied to GTK
 - add wlogout to waybar
@@ -171,7 +170,6 @@ TODO
 - configure shell
 - configure editor
 - unify clipboards
-- use sops-nix to encrypt an SSH key
 - host font packages, see https://discourse.nixos.org/t/guidelines-on-packaging-fonts/7683/2
 - remove apple-fonts flake
 - learn more helix hotkeys

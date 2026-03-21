@@ -2,7 +2,7 @@
   packages = with pkgs; [
     polkit_gnome # policy kit client/agent for authorization
     pavucontrol # audio settings gui
-    librewolf # browser
+    google-chrome # browser
     vlc # media player
     _1password-gui # password manager application
     _1password-cli # password manager cli
