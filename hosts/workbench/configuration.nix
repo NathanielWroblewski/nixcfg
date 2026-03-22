@@ -12,6 +12,7 @@ let
   peripheralsPkgset = import ../../pkgsets/peripherals.nix { pkgs = pkgs; };
   socialPkgset = import ../../pkgsets/social.nix { pkgs = pkgs; };
   retroGamingPkgset = import ../../pkgsets/retro-gaming.nix { pkgs = pkgs; };
+  modernGamingPkgset = import ../../pkgsets/modern-gaming.nix { pkgs = pkgs; };
 in
 {
   imports =
@@ -55,6 +56,7 @@ in
       ../../pkgcfg/system-level/gvfs.nix # gnome virtual file system, allows nautilus to access NAS
       ../../pkgcfg/system-level/niri.nix # wayland compositor, tiling window manager
       ../../pkgcfg/system-level/polkit.nix # enable policy kit back-end
+      ../../pkgcfg/system-level/steam.nix # steam & gamescope for gaming
       ../../pkgcfg/system-level/stylix.nix # themeing
       ../../pkgcfg/system-level/tuigreet.nix # display manager and login
       ../../pkgcfg/system-level/zsh.nix # shell
@@ -72,6 +74,7 @@ in
   environment.systemPackages = with pkgs;
     socialPkgset.packages ++
     retroGamingPkgset.packages ++
+    modernGamingPkgset.packages ++
     peripheralsPkgset.packages ++
     waylandPkgset.packages ++
     themePkgset.packages ++
