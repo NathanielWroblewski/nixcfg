@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   packages = with pkgs; [
+    pegasus-frontend # retroarch front-end, es-de was pulled due to CVEs in a dependency
+
     # standalone emulators
     ryubing # switch
     cemu # wiiu
