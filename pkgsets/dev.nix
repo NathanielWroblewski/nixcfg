@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   packages = with pkgs; [
     wezterm # terminal emulator
+    alacritty
     parallel # gnu parallel
     ripgrep
     starship # cli prompt

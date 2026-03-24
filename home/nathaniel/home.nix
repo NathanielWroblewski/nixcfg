@@ -37,6 +37,7 @@ in
     ../../hosts/shared/nixpkgs.nix
 
     # Import user-level package configurations
+    ../../pkgcfg/user-level/alacritty.nix
     ../../pkgcfg/user-level/fonts.nix
     ../../pkgcfg/user-level/fuzzel.nix
     ../../pkgcfg/user-level/git.nix

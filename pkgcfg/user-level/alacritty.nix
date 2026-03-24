@@ -15,8 +15,7 @@ in
       };
 
       window.decorations = "none";
-
-      window.opacity = 0.80;
+      window.opacity = 0.8;
 
       scrolling.history = 10000;
 
