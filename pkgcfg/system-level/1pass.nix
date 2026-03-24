@@ -2,7 +2,8 @@
   programs._1password-gui = {
     enable = true;
 
-    # polkitPolicyOwners = [ "nathaniel" ];
+    # TODO: pull username from constants
+    polkitPolicyOwners = [ "nathaniel" ];
   };
 
   programs._1password.enable = true;
