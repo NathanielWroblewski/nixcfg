@@ -35,12 +35,12 @@ input {
     // Next sections include libinput settings.
     // Omitting settings disables them, or leaves them at their default values.
     touchpad {
-        // off
+        off
         // tap
         // dwt
         // dwtp
         // drag-lock
-        natural-scroll
+        // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
@@ -58,7 +58,7 @@ input {
     }
 
     trackpoint {
-        // off
+        off
         // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
