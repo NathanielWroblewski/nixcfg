@@ -14,7 +14,7 @@ environment {
 
     // Tell electron-based apps to run on wayland
     // https://github.com/YaLTeR/niri/wiki/Application-Issues#electron-applications
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    // ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
  
 // Input device configuration.
