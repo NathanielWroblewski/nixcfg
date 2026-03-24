@@ -1,4 +1,4 @@
-{ constants, ... }:
+{ constants, lib, ... }:
 let
   fonts = constants.themes.fonts;
 in
@@ -15,7 +15,7 @@ in
       };
 
       window.decorations = "none";
-      window.opacity = 0.8;
+      window.opacity = lib.mkForce 0.8;
 
       scrolling.history = 10000;
 
