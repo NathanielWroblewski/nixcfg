@@ -79,8 +79,6 @@ in
     waylandPkgset.packages ++
     themePkgset.packages ++
     globalPkgset.packages ++ [
-      xclip # clipboard
-      wl-clipboard # wayland clipboard, allows copying from terminal ctrl+shift+c 
       usbutils # for troubleshooting the Dock peripheral
       pciutils # for troubleshooting the Dock peripheral
     ];

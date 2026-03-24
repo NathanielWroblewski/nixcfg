@@ -16,10 +16,12 @@ in
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  home.packages =
+  home.packages = with pkgs;
     userPackageList.packages ++
     devPackageList.packages ++
-    [ ];
+    [
+      wl-clipboard # wayland clipboard, allows copying from terminal ctrl+shift+c 
+    ];
 
   # Slightly modified from /hosts/shares/nix.nix for user-level
   nix = {
