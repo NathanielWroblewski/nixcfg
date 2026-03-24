@@ -3,7 +3,9 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 
-spawn-at-startup "xwayland-satellite"
+// currently using systemd for xwayland-satellite, see pkgcfg.
+// if removing the systemd entry, can reimplement spawn-at-startup below
+// spawn-at-startup "xwayland-satellite"
 // spawn-at-startup "1password --silent"
 
 // Or, if you built it by hand:
