@@ -6,13 +6,7 @@
 # created by a vanilla NixOS installation.
 { pkgs, ... }:
 let
-  waylandPkgset = import ../../pkgsets/wayland.nix { pkgs = pkgs; };
-  themePkgset = import ../../pkgsets/themes.nix { pkgs = pkgs; };
-  globalPkgset = import ../../pkgsets/global.nix { pkgs = pkgs; };
-  peripheralsPkgset = import ../../pkgsets/peripherals.nix { pkgs = pkgs; };
-  socialPkgset = import ../../pkgsets/social.nix { pkgs = pkgs; };
-  retroGamingPkgset = import ../../pkgsets/retro-gaming.nix { pkgs = pkgs; };
-  modernGamingPkgset = import ../../pkgsets/modern-gaming.nix { pkgs = pkgs; };
+  pkgsets = import ../../pkgsets/system-level/default.nix { inherit pkgs; };
 in
 {
   imports =
@@ -61,25 +55,18 @@ in
       ../../pkgcfg/system-level/tuigreet.nix # display manager and login
       ../../pkgcfg/system-level/zsh.nix # shell
       ../../pkgcfg/system-level/tailscale.nix # vpn
-      # ../../pkgcfg/system-level/docker.nix
-      # ../../pkgcfg/system-level/hyprland.nix
-      # ../../pkgcfg/system-level/gpg.nix
-      # ../../pkgcfg/system-level/steam.nix
-      # ../../pkgcfg/system-level/niri.nix
-      # ../../pkgcfg/system-level/uwsm.nix
     ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
-    socialPkgset.packages ++
-    retroGamingPkgset.packages ++
-    modernGamingPkgset.packages ++
-    peripheralsPkgset.packages ++
-    waylandPkgset.packages ++
-    themePkgset.packages ++
-    globalPkgset.packages ++ [
-      usbutils # for troubleshooting the Dock peripheral
-      pciutils # for troubleshooting the Dock peripheral
-    ];
+    pkgsets.shell ++
+    pkgsets.wayland ++
+    pkgsets.peripherals ++
+    pkgsets.credentials ++
+    pkgsets.nas ++
+    pkgsets.networking ++
+    pkgsets.gaming ++
+    pkgsets.themes ++
+    [ ];
 }

@@ -41,7 +41,8 @@ flake.nix
   │ ├ hosts/$host/hardware-configuration
   │ ├ syscfg/shared/*
   │ ├ syscfg/$host/*
-  │ ├ pkgsets/global
+  │ ├ pkgsets/system-level/*
+  │ ├ pkgsets/user-level/*
   │ └ pkgcfg/system-level/*
   └ hosts/$host/users/default
       └ hosts/slab/users/$user
@@ -75,9 +76,8 @@ Directory Structure
 │   ├── system-level  # system-level package configurations
 │   └── user-level    # user-level package configurations (home-manager)
 └── pkgsets           # preset package lists for users/roles
-    ├── dev.nix       # developer packages
-    ├── global.nix    # global packages (includes root)
-    └── user.nix      # user packages
+    ├── system-level  # system-level packages
+    └── user-level    # user-level packages
 ```
 
 The canonical `configuration.nix` and `hardware-configuration.nix` provisioned by a vanilla NixOS install
@@ -155,6 +155,25 @@ Then pass the look-up table into `ffmpeg`:
 ```sh
 $ ffmpeg -i ./input.mp4 -i ./tokyo-night-dark.png -lavfi '[0][1]haldclut,scale=3440:-1:force_original_aspect_ratio=decrease,crop=3440:1440"' -c:a copy ./output.mp4
 ```
+
+Skyscraper for rom assets
+---
+
+Scrape assets to cache for a particular system
+```sh
+Skyscraper -p nes -s screenscraper -i ~/roms/nes/ -u <user>:<pass> --flags videos
+```
+
+Output metadata file from cache
+```sh
+Skyscraper -p snes -f pegasus -g ~/roms/snes --gamelistfilename=_metadata.pegasus.txt --flags videos -i ~/roms/snes -o ~/roms/snes
+```
+
+Themeing Pegasus
+---
+
+Download a theme from pegasus-frontend.org, unzip it, and move it to `.config/pegasus-frontend/themes`
+
 
 TODO
 ---

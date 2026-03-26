@@ -1,8 +1,7 @@
 { config, lib, pkgs, constants, ... }:
 let
+  pkgsets = import ../../pkgsets/user-level/default.nix { inherit pkgs; };
   users = constants.users;
-  userPackageList = import ../../pkgsets/user.nix { pkgs = pkgs; };
-  devPackageList = import ../../pkgsets/dev.nix { pkgs = pkgs; };
 in
 {
   # Let Home Manager install and manage itself.
@@ -17,11 +16,13 @@ in
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
   home.packages = with pkgs;
-    userPackageList.packages ++
-    devPackageList.packages ++
-    [
-      wl-clipboard # wayland clipboard, allows copying from terminal ctrl+shift+c 
-    ];
+    pkgsets.chat ++
+    pkgsets.desktop ++
+    pkgsets.dev ++
+    pkgsets.retroGaming ++
+    pkgsets.usenet ++
+    pkgsets.user ++
+    [ ];
 
   # Slightly modified from /hosts/shares/nix.nix for user-level
   nix = {
@@ -51,7 +52,6 @@ in
     ../../pkgcfg/user-level/swaybg.nix
     ../../pkgcfg/user-level/swayidle.nix
     ../../pkgcfg/user-level/waybar.nix
-    ../../pkgcfg/user-level/wezterm.nix
     ../../pkgcfg/user-level/xwayland-satellite.nix
     ../../pkgcfg/user-level/yazi.nix
     ../../pkgcfg/user-level/zsh.nix
@@ -70,10 +70,11 @@ in
   # };
 
   home.sessionVariables = {
-    TERMINAL = "wezterm";
+    TERMINAL = "alacritty";
     EDITOR = "hx";
   };
 
+  # Add utility scripts
   home.file."bin/wifi" = {
     text = builtins.readFile ../../scripts/wifi.sh;
     executable = true;

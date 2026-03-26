@@ -6,9 +6,7 @@
 # created by a vanilla NixOS installation.
 { pkgs, ... }:
 let
-  waylandPkgset = import ../../pkgsets/wayland.nix { pkgs = pkgs; };
-  themePkgset = import ../../pkgsets/themes.nix { pkgs = pkgs; };
-  globalPkgset = import ../../pkgsets/global.nix { pkgs = pkgs; };
+  pkgsets = import ../../pkgsets/system-level/default.nix { inherit pkgs; };
 in
 {
   imports =
@@ -51,12 +49,6 @@ in
       ../../pkgcfg/system-level/tuigreet.nix # display manager and login
       ../../pkgcfg/system-level/zsh.nix # shell
       ../../pkgcfg/system-level/tailscale.nix # vpn
-      # ../../pkgcfg/system-level/docker.nix
-      # ../../pkgcfg/system-level/hyprland.nix
-      # ../../pkgcfg/system-level/gpg.nix
-      # ../../pkgcfg/system-level/steam.nix
-      # ../../pkgcfg/system-level/niri.nix
-      # ../../pkgcfg/system-level/uwsm.nix
     ];
 
   boot.initrd.luks.devices."luks-b99c70c5-5131-45b2-a318-88efa944325d".device = "/dev/disk/by-uuid/b99c70c5-5131-45b2-a318-88efa944325d";
@@ -64,14 +56,15 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
-    waylandPkgset.packages ++
-    themePkgset.packages ++
-    globalPkgset.packages ++ [
-      xclip # clipboard
-      wl-clipboard # wayland clipboard, allows copying from terminal ctrl+shift+c 
-      usbutils # for troubleshooting the Dock peripheral
-      pciutils # for troubleshooting the Dock peripheral
-    ];
+    pkgsets.shell ++
+    pkgsets.wayland ++
+    pkgsets.peripherals ++
+    pkgsets.credentials ++
+    pkgsets.nas ++
+    pkgsets.networking ++
+    pkgsets.gaming ++
+    pkgsets.themes ++
+    [ ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
