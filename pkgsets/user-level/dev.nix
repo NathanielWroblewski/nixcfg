@@ -13,4 +13,5 @@
   yazi # terminal file manager
   lutgen # apply color themes to images
   ffmpeg
+  sublime4 # editor
 ]

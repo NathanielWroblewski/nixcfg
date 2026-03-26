@@ -49,6 +49,7 @@ in
     ../../pkgcfg/user-level/niri.nix
     ../../pkgcfg/user-level/polkit-gnome.nix # enable policy kit client/agent
     ../../pkgcfg/user-level/stylix.nix
+    ../../pkgcfg/user-level/sublime.nix
     ../../pkgcfg/user-level/swaybg.nix
     ../../pkgcfg/user-level/swayidle.nix
     ../../pkgcfg/user-level/waybar.nix
