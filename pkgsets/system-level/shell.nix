@@ -5,4 +5,5 @@
   git # version control
   neovim # text editor
   helix # text editor
+  bottom # htop descendant
 ]
