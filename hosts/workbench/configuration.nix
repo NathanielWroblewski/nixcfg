@@ -52,21 +52,23 @@ in
       ../../pkgcfg/system-level/polkit.nix # enable policy kit back-end
       ../../pkgcfg/system-level/steam.nix # steam & gamescope for gaming
       ../../pkgcfg/system-level/stylix.nix # themeing
+      ../../pkgcfg/system-level/tailscale.nix # mesh vpn
       ../../pkgcfg/system-level/tuigreet.nix # display manager and login
+      ../../pkgcfg/system-level/sabnzbd.nix # usenet reader
       ../../pkgcfg/system-level/zsh.nix # shell
-      ../../pkgcfg/system-level/tailscale.nix # vpn
     ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
-    pkgsets.shell ++
-    pkgsets.wayland ++
-    pkgsets.peripherals ++
     pkgsets.credentials ++
+    pkgsets.gaming ++
     pkgsets.nas ++
     pkgsets.networking ++
-    pkgsets.gaming ++
+    pkgsets.peripherals ++
+    pkgsets.shell ++
     pkgsets.themes ++
+    pkgsets.usenet ++
+    pkgsets.wayland ++
     [ ];
 }

@@ -7,6 +7,7 @@
   peripherals = import ./peripherals.nix { inherit pkgs; };
   shell = import ./shell.nix { inherit pkgs; };
   themes = import ./themes.nix { inherit pkgs; };
+  usenet = import ./usenet.nix { inherit pkgs; };
   wayland = import ./wayland.nix { inherit pkgs; };
 }
 

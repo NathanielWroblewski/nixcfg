@@ -4,7 +4,6 @@
   desktop = import ./desktop.nix { inherit pkgs; };
   dev = import ./dev.nix { inherit pkgs; };
   retroGaming = import ./retro-gaming.nix { inherit pkgs; };
-  usenet = import ./usenet.nix { inherit pkgs; };
   user = import ./user.nix { inherit pkgs; };
 }
 
