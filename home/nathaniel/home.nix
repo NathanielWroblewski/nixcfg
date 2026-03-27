@@ -20,6 +20,7 @@ in
     pkgsets.desktop ++
     pkgsets.dev ++
     pkgsets.retroGaming ++
+    pkgsets.user ++
     [ ];
 
   # Slightly modified from /hosts/shares/nix.nix for user-level

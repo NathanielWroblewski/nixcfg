@@ -1,5 +1,5 @@
 { pkgs, ... }: with pkgs; [
   google-chrome # browser
-  vlc # media player
+  mpv # media player
   marktext # markdown previewer/editor for note taking
 ]
