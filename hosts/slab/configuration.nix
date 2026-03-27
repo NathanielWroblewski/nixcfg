@@ -42,6 +42,7 @@ in
 
       # Device-level package configuration
       ../../pkgcfg/system-level/1pass.nix # password manager
+      ../../pkgcfg/system-level/avahi.nix # auto-discovery of wireless network printers etc
       ../../pkgcfg/system-level/gvfs.nix # gnome virtual file system, allows nautilus to access NAS
       ../../pkgcfg/system-level/niri.nix # wayland compositor, tiling window manager
       ../../pkgcfg/system-level/polkit.nix # enable policy kit back-end

@@ -4,4 +4,5 @@
   keybase-gui # encrypted messaging app
   telegram-desktop # messaging app
   slack # messaging app
+  discord
 ]
