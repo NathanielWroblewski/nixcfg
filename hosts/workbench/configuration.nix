@@ -25,6 +25,7 @@ in
       ../../syscfg/shared/keyboard.nix
       ../../syscfg/shared/printer.nix
       ../../syscfg/shared/trackpad.nix
+      ../../syscfg/shared/bluetooth.nix
 
       # Networking
       ../../syscfg/shared/networking.nix
