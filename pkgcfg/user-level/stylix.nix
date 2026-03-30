@@ -4,7 +4,7 @@
     targets = {
       gtk.enable = false;
       helix.enable = false;
-      wezterm.enable = false;
+      alacritty.enable = false;
     };
 
     polarity = "light";

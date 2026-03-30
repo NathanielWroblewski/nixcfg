@@ -194,7 +194,7 @@ TODO
 - learn more helix hotkeys
 - remap more mac hotkeys
   - cmd+left,right cmd+shift+left,right
-- niri launch on start wezterm and cd to nixcfg
+- niri launch on start terminal and cd to nixcfg
 - get a default sans-serif (Monteserat?)
 - test that noto font emojis worked
 - connecting to NAS

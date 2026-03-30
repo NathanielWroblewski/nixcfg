@@ -27,7 +27,7 @@ in
         icon-theme = "hicolor";
         icons-enabled = true;
         hide-before-typing = false;
-        terminal = "wezterm";
+        terminal = "alacritty";
         tabs = 2;
         exit-on-keyboard-focus-loss = true;
 

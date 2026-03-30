@@ -1,5 +1,5 @@
 rec {
-  terminal = tokyo_night; # wezterm
+  terminal = tokyo_night; # alacritty
   lockscreen = tokyo_night; # swaylock-effects
   tray = tokyo_night; # waybar
   app_launcher = tokyo_night;
