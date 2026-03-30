@@ -72,6 +72,7 @@ in
   home.sessionVariables = {
     TERMINAL = "alacritty";
     EDITOR = "hx";
+    NIXOS_OZONE_WL = "1";
   };
 
   # Add utility scripts
