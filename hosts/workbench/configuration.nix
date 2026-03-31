@@ -36,6 +36,7 @@ in
       # Peripheral support
       ../../syscfg/workbench/wireplumber.nix # elgato wave 3 microphone support
       ../../syscfg/workbench/thunderbolt.nix # caldigit TS4 over thunderbolt cxn
+      ../../syscfg/shared/peripherals/keyboard-nuphy-air75-v3.nix
 
       # Theme
       ../../syscfg/shared/fonts.nix
@@ -45,6 +46,9 @@ in
 
       # Device-specific desktop environment
       ../../syscfg/workbench/desktop.nix
+
+      # Debugging stuck niri / wayland grab state
+      ../../syscfg/workbench/libinput-monitor.nix
 
       # Device-level package configuration
       ../../pkgcfg/system-level/1pass.nix # password manager
