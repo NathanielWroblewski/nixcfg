@@ -1,5 +1,9 @@
 {
   services.udev.extraRules = ''
+    # NuPhy Air75 V3 - disable NKRO interface (iface 01) which sends phantom modifier events
+    # that interfere with niri window management
+    KERNEL=="event*", ENV{ID_VENDOR_ID}=="19f5", ENV{ID_MODEL_ID}=="1028", ENV{ID_USB_INTERFACE_NUM}=="01", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+
     # Disable the mouse interface on NuPhy Air75 V3 keyboard (vid:19f5 pid:1028 iface:02)
     # I suspect this interface may send phantom mouse button events
     # that interfere with niri window management, e.g. when super is pressed
