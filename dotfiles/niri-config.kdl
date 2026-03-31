@@ -3,20 +3,8 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 
-// currently using systemd for xwayland-satellite, see pkgcfg.
-// if removing the systemd entry, can reimplement spawn-at-startup below
-// spawn-at-startup "xwayland-satellite"
-// spawn-at-startup "1password --silent"
-
-// Or, if you built it by hand:
-// spawn-at-startup "~/path/to/code/target/release/xwayland-satellite"
-
 environment {
     DISPLAY ":0"
-
-    // Tell electron-based apps to run on wayland
-    // https://github.com/YaLTeR/niri/wiki/Application-Issues#electron-applications
-    // ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
  
 // Input device configuration.
@@ -305,14 +293,6 @@ layer-rule {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
 
 window-rule {
     match app-id="Alacritty"
@@ -325,11 +305,6 @@ window-rule {
     match app-id="1Password"
     match app-id="polkit-gnome-authentication-agent-1"
     block-out-from "screen-capture"
-}
-
-window-rule {
-    match app-id="gamescope"
-    open-fullscreen true
 }
 
 // Example: enable rounded corners for all windows.
@@ -464,6 +439,10 @@ binds {
     // Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
     // Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
+    Mod+MouseRight { spawn ""; }
+    Mod+MouseLeft { spawn ""; }
+    Mod+MouseMiddle { spawn ""; }
+
     // Similarly, you can bind touchpad scroll "ticks".
     // Touchpad scrolling is continuous, so for these binds it is split into
     // discrete intervals.
@@ -545,7 +524,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    // Mod+V       { toggle-window-floating; }
+    Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
