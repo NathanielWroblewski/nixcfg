@@ -7,8 +7,10 @@
     # Disable the mouse interface on NuPhy Air75 V3 keyboard (vid:19f5 pid:1028 iface:02)
     # I suspect this interface may send phantom mouse button events
     # that interfere with niri window management, e.g. when super is pressed
-    KERNEL=="event*", ENV{ID_VENDOR_ID}=="19f5", ENV{ID_MODEL_ID}=="1028", ENV{ID_USB_INTERFACE_NUM}=="02", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+    KERNEL=="event*", ENV{ID_VENDOR_ID}=="19f5", ENV{ID_MODEL_ID}=="1028", ENV{ID_USB_INTERFACE_NUM}=="02", ENV{ID_INPUT_MOUSE}=="1", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
+
+  # Reboot after modifying and applying the changes.
 
   # You can check that the rule was applied with the following:
   # $ sudo udevadm info /dev/input/event12 | grep LIBINPUT
@@ -19,11 +21,9 @@
   # $ sudo udevadm trigger /dev/input/event12
   # $ sudo libinput list-devices | grep -A3 "Air75.*Mouse"
 
-  # Disabling the mouse input of this keyboard is an attempt to debug
-  # an error that drops niri into a window resize mode that ignores most
-  # keyboard input (ctrl+c works in an open terminal). Suspecting super +
-  # a mouse input triggers the mode, and then never released.  To compliment
-  # this change, a separate libinput monitor (syscfg/workbench/libinput-monitor.nix)
-  # which logs events to logrotated files, has been introduced as well, to help
-  # identify if a super key is being pressed and not released.  
+  # Occassionally the user will be dropped into a window resize mode permanently where
+  # most keyboard input is also ignored.  Disabling the virtual mouse input of this
+  # keyboard, and disabling the duplicate virtual keyboard layer, prevents entering this
+  # state. Evidence collected from a libinput monitor (syscfg/workbench/libinput-monitor.nix)
+  # indicated the virtual keyboard layer was triggering long-held super key press events.
 }
