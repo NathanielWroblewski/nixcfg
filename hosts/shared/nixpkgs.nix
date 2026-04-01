@@ -6,8 +6,6 @@
     overlays = [
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.stable-packages
-      outputs.overlays.firefox-addons
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -27,6 +25,7 @@
 
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
         "onepassword-password-manager"
+        "teamspeak6-client"
       ];
     };
   };

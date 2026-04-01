@@ -9,8 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs"; # tells home manager to use the same version of nixpkgs defined below
     };
 
-    # catppuccin.url = github:catppuccin/nix;              # themes for apps/desktop
-
     # themes for appls/desktops
     stylix = {
       url = "github:danth/stylix";
@@ -20,17 +18,9 @@
     # nixpkgs is the main source for nix packages, pins to unstable for latest
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # a secondary version is specified to allow for specifying the latest stable release
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
-
     # apple fonts, requires stylix
     apple-fonts = {
       url = "github:Lyndeno/apple-fonts.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
