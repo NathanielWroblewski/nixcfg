@@ -46,6 +46,7 @@ in
     ../../pkgcfg/user-level/helix/default.nix
     ../../pkgcfg/user-level/keybase.nix
     ../../pkgcfg/user-level/niri.nix
+    ../../pkgcfg/user-level/obs-studio.nix
     ../../pkgcfg/user-level/polkit-gnome.nix # enable policy kit client/agent
     ../../pkgcfg/user-level/stylix.nix
     ../../pkgcfg/user-level/sublime.nix
