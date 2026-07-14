@@ -1,6 +1,7 @@
 { pkgs, ... }: with pkgs; [
   brightnessctl # control screen brightness
   fuzzel # application launcher
+  losslesscut # video editing
   nautilus # file explorer
   obs-studio # screen recording
   pavucontrol # audio settings gui
